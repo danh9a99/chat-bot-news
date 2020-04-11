@@ -29,7 +29,7 @@ See the LICENSE file in the root directory of this source tree. Feel free to use
 3. Review the steps in the Facebook [walk-through] (https://developers.facebook.com/docs/messenger-platform/quickstart) to setup your Page.  Go ahead an do step 1.
 4. Sign up for a Heroku account
 5. Hit this button to setup the app in Heroku.
- [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/matthewericfisher/fb-robot)
+ [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/danh9a99/chat-bot-news.git)
 7. Pick a name for your app and remember it
 8. In the Facebook console, get the App Secret from the main Settings page.  Add it to the Heroku setup window
 9. In the Facebook console, generate the Page Access Token from the Messenger -> Settings tab. Add it to the Heroku setup  window
