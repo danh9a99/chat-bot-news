@@ -1,7 +1,7 @@
 {
-  "name": "DMS Software Bot",
-  "description": "An example Facebook Bot.",
-  "repository": "https://github.com/matthewericfisher/fb-robot",
+  "name": "Bapp's Bot",
+  "description": "A Bot is designed by Bapp, for studing.",
+  "repository": "https://github.com/danh9a99/chat-bot-news.git",
   "logo": "https://raw.githubusercontent.com/matthewericfisher/fb-robot/master/img/icon.png",
   "env": {
     "APP_SECRET": {
