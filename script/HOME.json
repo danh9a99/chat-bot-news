@@ -8,7 +8,7 @@
             "title": "COVID-19",
             "subtitle": "Thống kê tình hình dịch",
             "item_url": "https://moh.gov.vn/",               
-            "image_url": "https://raw.githubusercontent.com/matthewericfisher/fb-robot/master/img/corona_1.jpg",
+            "image_url": "https://raw.githubusercontent.com/danh9a99/chat-bot-news/master/img/corona_1.jpg",
             "buttons": [
             {
               "type": "postback",
@@ -29,7 +29,7 @@
           }, 
           {
             "title": "Cá nhân hóa",              
-            "image_url": "https://raw.githubusercontent.com/matthewericfisher/fb-robot/master/img/robot.png",
+            "image_url": "https://raw.githubusercontent.com/danh9a99/fb-robot/master/img/robot.png",
             "buttons": [
             {
               "type": "postback",
