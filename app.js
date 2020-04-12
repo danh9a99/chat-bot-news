@@ -645,7 +645,7 @@ function sendJsonMessage(recipientId,keyword) {
 console.log("sendJsonMessage " + scriptRules[keyword.toUpperCase()]);
 var dataObj = []
 downloadObjectAsJson(dataObj ,"data");
-console.log("Data: ", dataObj);
+//console.log("Data: ", dataObj);
   if (_.has(scriptRules, keyword.toUpperCase())) {
       sendSingleJsonMessage(recipientId,scriptRules[keyword.toUpperCase()]);
   }
