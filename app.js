@@ -786,10 +786,10 @@ function sendGenericMessage(recipientId) {
          "template_type": "generic",
           "elements": [
           {
-            "title": "Covid-19",
-            "subtitle": "Thông kê về tình hình dịch bệnh!",
+            "title": "COVID-19",
+            "subtitle": "Thống kê tình hình dịch",
             "item_url": "https://moh.gov.vn/",               
-            "image_url": "https://raw.githubusercontent.com/matthewericfisher/fb-robot/master/img/robot.png",
+            "image_url": "https://raw.githubusercontent.com/danh9a99/chat-bot-news/master/img/corona_1.jpg",
             "buttons": [
             {
               "type": "postback",
@@ -804,83 +804,29 @@ function sendGenericMessage(recipientId) {
             {
               "type": "postback",
               "title": "Top 10",
-              "payload": "I want one"
+              "payload": "Contact"
             }
             ]
           }, 
           {
-            "title": "Cá nhân hóa",
-            "subtitle": "Bạn có thể tùy chỉnh bot",
-            //"item_url": "http://www.dynamic-memory.com/",               
-            "image_url": "https://raw.githubusercontent.com/matthewericfisher/fb-robot/master/img/evolution.png",
+            "title": "Cá nhân hóa",              
+            "image_url": "https://raw.githubusercontent.com/danh9a99/fb-robot/master/img/robot.png",
             "buttons": [
             {
               "type": "postback",
               "title": "Tùy chỉnh bot",
-              "payload": "Contact"
-            }, 
-            {
-              "type": "postback",
-              "title": "Home",
-              "payload": "Social media"
-            },
-            {
-              "type": "postback",
-              "title": "Matthew's bio",
-              "payload": "bio"
-            }
-            ]
-          }, 
-          { 
-            "title": "Custom Examples",
-            "subtitle": "A few small apps to give an idea of the possibilites",
-            "item_url": "https://dynamic-memory.com",
-            "image_url": "https://raw.githubusercontent.com/matthewericfisher/fb-robot/master/img/danger-man-at-work-hi.png",
-            "buttons": [
-            {
-              "type": "postback",
-              "title": "Tell me a joke 😜",
-              "payload": "joke"
-            },
-            {
-              "type": "postback",
-              "title": "Random Image",
-              "payload": "image"
-            },
-            {
-              "type": "postback",
-              "title": "Who am I?",
-              "payload": "who"
-            }
-            ]
-          },
-          { 
-            "title": "Bot Examples",
-            "subtitle": "Some great bots",
-            "item_url": "https://developers.facebook.com/products/messenger/",
-            "image_url": "https://raw.githubusercontent.com/matthewericfisher/fb-robot/master/img/example.jpeg",
-            "buttons": [
-            {
-              "type": "web_url",
-              "url": "https://www.messenger.com/t/HealthTap",
-              "title": "Health Tap"
-            },
-            {
-              "type": "web_url",
-              "url": "http://www.messenger.com/t/EstherBot",
-              "title": "Esther's cool bot"
-            },
-            {
-              "type": "web_url",
-              "url": "http://www.messenger.com/t/techcrunch",
-              "title": "TechCrunch news bot"
+              "payload": "custom"
             }
             ]
           }
+        
           ]
         }
       }
     }
+
+
+
   };  
 
   callSendAPI(messageData);
