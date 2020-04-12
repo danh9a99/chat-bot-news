@@ -529,6 +529,7 @@ function sendFileMessage(recipientId) {
 }
 
 function sendSingleJsonMessage(recipientId,filename) {
+  console.log("sendSingleJsonMessage" + filename);
    try {
       filename = "./script/" + filename;
       var json  = require(filename);
@@ -629,7 +630,7 @@ console.log("sendCustoMessage "+ messageText);
 }
 
 function sendJsonMessage(recipientId,keyword) {
-console.log("sendJsonMessage " + keyword);
+console.log("sendJsonMessage " + scriptRules[keyword.toUpperCase()]);
   if (_.has(scriptRules, keyword.toUpperCase())) {
       sendSingleJsonMessage(recipientId,scriptRules[keyword.toUpperCase()]);
   }
