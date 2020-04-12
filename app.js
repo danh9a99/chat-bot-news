@@ -528,8 +528,20 @@ function sendFileMessage(recipientId) {
   callSendAPI(messageData);
 }
 
+
+function downloadObjectAsJson(exportObj, exportName){
+  var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(exportObj));
+  var downloadAnchorNode = document.createElement('a');
+  downloadAnchorNode.setAttribute("https://code.junookyo.xyz/api/ncov-moh/data.json",     dataStr);
+  downloadAnchorNode.setAttribute("download", exportName + ".json");
+  document.body.appendChild(downloadAnchorNode); // required for firefox
+  downloadAnchorNode.click();
+  downloadAnchorNode.remove();
+}
+
+
 function sendSingleJsonMessage(recipientId,filename) {
-  console.log("sendSingleJsonMessage" + filename);
+  console.log("sendSingleJsonMessage " + filename);
    try {
       filename = "./script/" + filename;
       var json  = require(filename);
