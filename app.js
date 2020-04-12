@@ -531,7 +531,7 @@ function sendFileMessage(recipientId) {
 
 function getCovidNews(){
   var response = [];
-  _tongCaNhiem = 0;
+  
   https.get(`https://code.junookyo.xyz/api/ncov-moh/data.json`, res => {
       let body = "";
       // read data
