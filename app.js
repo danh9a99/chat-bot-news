@@ -570,9 +570,9 @@ function sendSingleJsonMessage(recipientId,filename) {
     res.on("end", () => {
         var profile = JSON.parse(body);
         
-        console.log(profile.world.totalCases);
-        console.log(profile.world.totalRecovered)
-        console.log(profile.world.totalDeaths)
+        console.log(profile.global.Cases);
+        console.log(profile.global.recovered)
+        console.log(profile.global.deaths)
         console.log('done');
         // for(var i = 0; i<profile.VI.arrayArea.length; i++)
         // {
