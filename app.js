@@ -794,17 +794,17 @@ function sendGenericMessage(recipientId) {
             {
               "type": "postback",
               "title": "Việt Nam",
-              "payload": "What is this Robot?"
+              "payload": "VN"
             },
             {
               "type": "postback",
               "title": "Thế giới",
-              "payload": "business"
+              "payload": "GB"
             },
             {
               "type": "postback",
               "title": "Top 10",
-              "payload": "Contact"
+              "payload": "top-10"
             }
             ]
           }, 
