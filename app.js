@@ -570,7 +570,7 @@ function sendSingleJsonMessage(recipientId,filename) {
     res.on("end", () => {
         var profile = JSON.parse(body);
         
-        console.log(profile.global.Cases);
+        console.log(profile.global.cases);
         console.log(profile.global.recovered)
         console.log(profile.global.deaths)
         console.log('done');
