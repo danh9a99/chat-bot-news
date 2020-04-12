@@ -34,7 +34,7 @@
             {
               "type": "postback",
               "title": "Tùy chỉnh bot",
-              "payload": "I want one"
+              "payload": "custom"
             }
             ]
           }, 
