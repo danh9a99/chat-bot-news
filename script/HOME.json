@@ -23,7 +23,7 @@
             {
               "type": "postback",
               "title": "Top 10",
-              "payload": "I want one"
+              "payload": "Contact"
             }
             ]
           }, 
@@ -34,17 +34,7 @@
             {
               "type": "postback",
               "title": "Tùy chỉnh bot",
-              "payload": "Contact"
-            }, 
-            {
-              "type": "postback",
-              "title": "Social media",
-              "payload": "Social media"
-            },
-            {
-              "type": "postback",
-              "title": "Matthew's bio",
-              "payload": "bio"
+              "payload": "I want one"
             }
             ]
           }, 
