@@ -1230,7 +1230,7 @@ function removePersistentMenu(){
 
 function addKeywordStep1(recipientId)
 {
-   sendTextMessage(recipientId,"The keyword will drive the actions by the Bot.  The user can type in the keyword or it can be triggered by a link.  The keyword can contain letters, numbers and spaces. Please type in the keyword:");
+   sendTextMessage(recipientId,"Keyword để kích hoạt các hành động của Bot. Bạn có thể nhập keyword hoặc nó có thể được kích hoạt bởi một liên kết. Keyword có thể chứa chữ cái, số và dấu cách. Vui lòng nhập keyword:");
    senderContext[recipientId].state = "addKeywordStep1";
 }
 
@@ -1254,7 +1254,7 @@ function addKeywordText(recipientId)
 
    if( senderContext[recipientId].state === "addKeywordStep2")
    {
-       sendTextMessage(recipientId,"Please type in the text to be sent to the user when this keyword is used.");
+       sendTextMessage(recipientId,"Vui lòng nhập văn bản sẽ được gửi cho bạn khi từ khóa này được sử dụng.");
        senderContext[recipientId].state = "addKeywordText";
    }
    else
@@ -1277,7 +1277,7 @@ function addKeywordTextStep2(recipientId,messageText)
            console.log("The file was saved!");
            senderContext[recipientId].state = "";
            customRules[senderContext[recipientId].keyword.toUpperCase()] = senderContext[recipientId].keyword.toUpperCase();
-           sendTextMessage(recipientId,"The keyword has been added.  Please type in the keyword to see the response.");
+           sendTextMessage(recipientId,"Đã thêm Keyword. Thử xem nào!!");
 
 /*
 fs.readFile(filename, function read(err, data) {
