@@ -529,14 +529,32 @@ function sendFileMessage(recipientId) {
 }
 
 
-function downloadObjectAsJson(exportObj, exportName){
-  var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(exportObj));
-  var downloadAnchorNode = document.createElement('a');
-  downloadAnchorNode.setAttribute("https://code.junookyo.xyz/api/ncov-moh/data.json",     dataStr);
-  downloadAnchorNode.setAttribute("download", exportName + ".json");
-  document.body.appendChild(downloadAnchorNode); // required for firefox
-  downloadAnchorNode.click();
-  downloadAnchorNode.remove();
+function getCovidNews(){
+  var response = [];
+  _tongCaNhiem = 0;
+  https.get(`https://code.junookyo.xyz/api/ncov-moh/data.json`, res => {
+      let body = "";
+      // read data
+      res.on("data" ,data => {
+          body += data.toString();
+      });
+      // print data
+      res.on("end", () => {
+          var profile = JSON.parse(body);
+          
+          console.log(profile.world.totalCases);
+          console.log(profile.world.totalRecovered)
+          console.log(profile.world.totalDeaths)
+          console.log('done');
+          // for(var i = 0; i<profile.VI.arrayArea.length; i++)
+          // {
+          //     response += profile.VI.arrayArea[i].Area + ": " + profile.VI.arrayArea[i].count + "\n";
+          //     _tongCaNhiem += profile.VI.arrayArea[i].count;
+          // }
+          // console.log(response);
+          // console.log(_tongCaNhiem);
+      });
+  });
 }
 
 
@@ -644,7 +662,7 @@ console.log("sendCustoMessage "+ messageText);
 function sendJsonMessage(recipientId,keyword) {
 console.log("sendJsonMessage " + scriptRules[keyword.toUpperCase()]);
 var dataObj = []
-downloadObjectAsJson(dataObj ,"data");
+getCovidNews();
 //console.log("Data: ", dataObj);
   if (_.has(scriptRules, keyword.toUpperCase())) {
       sendSingleJsonMessage(recipientId,scriptRules[keyword.toUpperCase()]);
