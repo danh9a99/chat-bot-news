@@ -6,7 +6,7 @@
           "text": "Select action",
           "buttons":[{
             "type": "postback",
-            "title": "Add new keyword",
+            "title": "Thêm keyword",
             "payload": "add keyword"
           }, {
             "type": "postback",
