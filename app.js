@@ -560,29 +560,29 @@ function getCovidNews(){
 
 function sendSingleJsonMessage(recipientId,filename) {
   console.log("sendSingleJsonMessage " + filename);
-  https.get(`https://code.junookyo.xyz/api/ncov-moh/data.json`, res => {
-    let body = "";
-    // read data
-    res.on("data" ,data => {
-        body += data.toString();
-    });
-    // print data
-    res.on("end", () => {
-        var profile = JSON.parse(body);
+//   https.get(`https://code.junookyo.xyz/api/ncov-moh/data.json`, res => {
+//     let body = "";
+//     // read data
+//     res.on("data" ,data => {
+//         body += data.toString();
+//     });
+//     // print data
+//     res.on("end", () => {
+//         var profile = JSON.parse(body);
         
-        console.log(profile.global.cases);
-        console.log(profile.global.recovered)
-        console.log(profile.global.deaths)
-        console.log('done');
-        // for(var i = 0; i<profile.VI.arrayArea.length; i++)
-        // {
-        //     response += profile.VI.arrayArea[i].Area + ": " + profile.VI.arrayArea[i].count + "\n";
-        //     _tongCaNhiem += profile.VI.arrayArea[i].count;
-        // }
-        // console.log(response);
-        // console.log(_tongCaNhiem);
-    });
-});
+//         console.log(profile.global.cases);
+//         console.log(profile.global.recovered)
+//         console.log(profile.global.deaths)
+//         console.log('done');
+//         // for(var i = 0; i<profile.VI.arrayArea.length; i++)
+//         // {
+//         //     response += profile.VI.arrayArea[i].Area + ": " + profile.VI.arrayArea[i].count + "\n";
+//         //     _tongCaNhiem += profile.VI.arrayArea[i].count;
+//         // }
+//         // console.log(response);
+//         // console.log(_tongCaNhiem);
+//     });
+// });
    try {
       filename = "./script/" + filename;
       var json  = require(filename);
