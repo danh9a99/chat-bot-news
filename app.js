@@ -759,7 +759,7 @@ console.log("sendJsonMessage " + keyword);
          for ( var index = 0; index < 10; index++){ 
           top_cases.push(profile.Countries[index].Country + " :" + profile.Countries[index].TotalConfirmed);
          }
-         callSendAPICovid(recipientId,top_cases);
+         callSendAPICovid(recipientId,"alo");
       });
   });
   }
