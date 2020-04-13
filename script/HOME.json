@@ -22,8 +22,8 @@
             },
             {
               "type": "postback",
-              "title": "top_10",
-              "payload": "Contact"
+              "title": "Top 10",
+              "payload": "top_10"
             }
             ]
           }, 
