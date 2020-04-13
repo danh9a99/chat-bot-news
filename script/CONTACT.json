@@ -5,23 +5,23 @@
          "template_type": "generic",
           "elements": [
           {
-            "title": "Contact",
-            "image_url": "https://raw.githubusercontent.com/matthewericfisher/fb-robot/master/img/canphone.png",
+            "title": "TOP",
+            "image_url": "https://raw.githubusercontent.com/danh9a99/chat-bot-news/master/img/top_cases.jpg",
             "buttons": [
             {
               "type": "postback",
-              "title": "Send a message",
-              "payload": "Send a message"
-            },
-            {
-              "type": "web_url",
-              "url": "http://www.dynamic-memory.com/",
-              "title": "DMS Software website"
+              "title": "Top 10 số ca mắc",
+              "payload": "top10_cases"
             },
             {
               "type": "postback",
-              "title": "Get email address",
-              "payload": "Get email address"
+              "title": "Top 10 số ca hồi phục",
+              "payload": "top10_recovered"
+            },
+            {
+              "type": "postback",
+              "title": "Top 10 số ca tử vong",
+              "payload": "top10_deaths"
             }
             ]
           }
