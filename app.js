@@ -758,7 +758,7 @@ console.log("sendJsonMessage " + keyword);
           }
          for ( var index = 0; index < 10; index++){ 
           top_cases.push(profile.Countries[index].TotalConfirmed);
-          top_countries.push(profile.Countries[i].Country);
+          top_countries.push(profile.Countries[index].Country);
          }
          callSendAPICovid(recipientId, top_countries + ": " + top_cases);
       });
