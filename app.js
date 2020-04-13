@@ -667,6 +667,7 @@ console.log("sendCustoMessage "+ messageText);
 function sendJsonMessage(recipientId,keyword) {
 console.log("sendJsonMessage " + keyword);
 
+
   if (_.has(scriptRules, keyword.toUpperCase())) {
       sendSingleJsonMessage(recipientId,scriptRules[keyword.toUpperCase()]);
   }
@@ -690,28 +691,6 @@ console.log("sendJsonMessage " + keyword);
                             "\nTử vong: " + profile.data.vietnam.deaths);
       });
   });
-  var messageData = {
-    recipient: {
-      id: recipientId
-    },
-    message: {
-      text: jokeString,
-      quick_replies: [
-        {
-          "content_type":"text",
-          "title":"top",
-          "payload":"contact"
-        },
-        {
-          "content_type":"text",
-          "title":"Home",
-          "payload":"home"
-        }
-      ]
-    }
-  };
-
-  callSendAPI(messageData);
   }
   else if (keyword == "GB"){
     https.get(`https://code.junookyo.xyz/api/ncov-moh/data.json`, res => {
