@@ -734,7 +734,7 @@ console.log("sendJsonMessage " + keyword);
   });
   }
   else if (keyword == "top_10"){
-    most_cases = 0
+    var most_cases = 0
     https.get(`https://api.covid19api.com/summary`, res => {
       let body = "";
       // read data
