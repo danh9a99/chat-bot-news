@@ -733,7 +733,7 @@ console.log("sendJsonMessage " + keyword);
       });
   });
   }
-  else if (keyword == "top_10"){
+  else if (keyword == "top10_cases"){
     var most_cases = 0
     let top_cases ="";
     var top_countries = []
