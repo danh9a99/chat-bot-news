@@ -762,6 +762,68 @@ console.log("sendJsonMessage " + keyword);
          callSendAPICovid(recipientId,top_cases);
       });
   });
+  
+  }
+  else if (keyword == "top10_recovered"){
+    var most_cases = 0
+    let top_recovered ="";
+    var top_countries = []
+    https.get(`https://api.covid19api.com/summary`, res => {
+      let body = "";
+      // read data
+      res.on("data" ,data => {
+          body += data.toString();
+      });
+      // print data
+      res.on("end", () => {
+          var profile = JSON.parse(body);
+          for(var i = 0; i <profile.Countries.length-1; i++){
+              for(var j = i+1; j < profile.Countries.length; j++){
+                if (profile.Countries[i].TotalRecovered < profile.Countries[j].TotalRecovered){
+                    most_cases = profile.Countries[i];
+                    profile.Countries[i] = profile.Countries[j];
+                    profile.Countries[j] = most_cases;
+                }
+              }      
+                     
+          }
+         for ( var index = 0; index < 10; index++){ 
+           top_recovered = top_recovered + profile.Countries[index].Country + ": " + profile.Countries[index].TotalRecovered + "\n";
+         }
+         callSendAPICovid(recipientId,top_recovered);
+      });
+  });
+  }
+
+  else if (keyword == "top10_deaths"){
+    var most_cases = 0
+    let top_deaths ="";
+    var top_countries = []
+    https.get(`https://api.covid19api.com/summary`, res => {
+      let body = "";
+      // read data
+      res.on("data" ,data => {
+          body += data.toString();
+      });
+      // print data
+      res.on("end", () => {
+          var profile = JSON.parse(body);
+          for(var i = 0; i <profile.Countries.length-1; i++){
+              for(var j = i+1; j < profile.Countries.length; j++){
+                if (profile.Countries[i].TotalDeaths < profile.Countries[j].TotalDeaths){
+                    most_cases = profile.Countries[i];
+                    profile.Countries[i] = profile.Countries[j];
+                    profile.Countries[j] = most_cases;
+                }
+              }      
+                     
+          }
+         for ( var index = 0; index < 10; index++){ 
+           top_deaths = top_deaths + profile.Countries[index].Country + ": " + profile.Countries[index].TotalDeaths + "\n";
+         }
+         callSendAPICovid(recipientId,top_deaths);
+      });
+  });
   }
 }
 
