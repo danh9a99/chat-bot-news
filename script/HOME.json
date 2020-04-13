@@ -13,7 +13,7 @@
             {
               "type": "postback",
               "title": "Việt Nam",
-              "payload": "What is this Robot?"
+              "payload": "VN"
             },
             {
               "type": "postback",
