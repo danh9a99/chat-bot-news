@@ -675,6 +675,7 @@ console.log("sendJsonMessage " + keyword);
       sendSingleJsonMessage(recipientId,customRules[keyword.toUpperCase()]);
   }
   else  if (keyword == "VN"){
+    stirngText = "";
     https.get(`https://code.junookyo.xyz/api/ncov-moh/data.json`, res => {
       let body = "";
       // read data
@@ -684,11 +685,41 @@ console.log("sendJsonMessage " + keyword);
       // print data
       res.on("end", () => {
           var profile = JSON.parse(body);
-          
-          callSendAPICovid(recipientId,"Việt Nam\nSố người nhiễm: " + 
-                            profile.data.vietnam.cases +
-                            "\nBình phục: " + profile.data.vietnam.recovered +
-                            "\nTử vong: " + profile.data.vietnam.deaths);
+          stirngText = "Việt Nam\nSố người nhiễm: " + 
+          profile.data.vietnam.cases +
+          "\nBình phục: " + profile.data.vietnam.recovered +
+          "\nTử vong: " + profile.data.vietnam.deaths;
+          // callSendAPICovid(recipientId,"Việt Nam\nSố người nhiễm: " + 
+          //                   profile.data.vietnam.cases +
+          //                   "\nBình phục: " + profile.data.vietnam.recovered +
+          //                   "\nTử vong: " + profile.data.vietnam.deaths);
+          var messageData = {
+            recipient: {
+              id: recipientId
+            },
+            message: {
+              text: stringText,
+              quick_replies: [
+                {
+                  "content_type":"text",
+                  "title":"Thế giới",
+                  "payload":"GB"
+                },
+                {
+                  "content_type":"text",
+                  "title":"Top",
+                  "payload":"contact"
+                },
+                {
+                  "content_type":"text",
+                  "title":"Home",
+                  "payload":"home"
+                }
+              ]
+            }
+          };
+        
+          callSendAPI(messageData);
       });
   });
   }
