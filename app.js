@@ -688,10 +688,8 @@ console.log("sendCustoMessage "+ messageText);
 }
 
 function sendJsonMessage(recipientId,keyword) {
-console.log("sendJsonMessage " + scriptRules[keyword.toUpperCase()]);
-var dataObj = []
-//getCovidNews();
-//console.log("Data: ", dataObj);
+console.log("sendJsonMessage " + keyword);
+
   if (_.has(scriptRules, keyword.toUpperCase())) {
       sendSingleJsonMessage(recipientId,scriptRules[keyword.toUpperCase()]);
   }
