@@ -23,11 +23,7 @@
               "title": "Top ca tử vong",
               "payload": "top10_deaths"
             },
-            {
-              "type": "postback",
-              "title": "Quốc gia chưa có ca nhiễm :|",
-              "payload": "no_cases"
-            }
+          
             ]
           }
           ]
