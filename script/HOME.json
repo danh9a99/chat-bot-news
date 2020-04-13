@@ -18,7 +18,7 @@
             {
               "type": "postback",
               "title": "Thế giới",
-              "payload": "business"
+              "payload": "GB"
             },
             {
               "type": "postback",
