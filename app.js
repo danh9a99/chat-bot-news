@@ -723,6 +723,31 @@ var dataObj = []
       });
   });
   }
+  else if (keyword == "GB"){
+    https.get(`https://code.junookyo.xyz/api/ncov-moh/data.json`, res => {
+      let body = "";
+      // read data
+      res.on("data" ,data => {
+          body += data.toString();
+      });
+      // print data
+      res.on("end", () => {
+          var profile = JSON.parse(body);
+          
+          callSendAPICovid(recipientId,"Thế giới\nSố người nhiễm: " + 
+                            profile.data.global.cases +
+                            "\nBình phục: " + profile.data.global.recovered +
+                            "\nTử vong: " + profile.data.global.deaths);
+          // for(var i = 0; i<profile.VI.arrayArea.length; i++)
+          // {
+          //     response += profile.VI.arrayArea[i].Area + ": " + profile.VI.arrayArea[i].count + "\n";
+          //     _tongCaNhiem += profile.VI.arrayArea[i].count;
+          // }
+          // console.log(response);
+          // console.log(_tongCaNhiem);
+      });
+  });
+  }
 }
 
 /*
