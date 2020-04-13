@@ -699,7 +699,26 @@ var dataObj = []
       sendSingleJsonMessage(recipientId,customRules[keyword.toUpperCase()]);
   }
   else  if (keyword == "VN"){
-      console.log("VN keyword");
+    https.get(`https://code.junookyo.xyz/api/ncov-moh/data.json`, res => {
+      let body = "";
+      // read data
+      res.on("data" ,data => {
+          body += data.toString();
+      });
+      // print data
+      res.on("end", () => {
+          var profile = JSON.parse(body);
+          
+          callSendAPICovid(recipientId, profile.data.global.cases);
+          // for(var i = 0; i<profile.VI.arrayArea.length; i++)
+          // {
+          //     response += profile.VI.arrayArea[i].Area + ": " + profile.VI.arrayArea[i].count + "\n";
+          //     _tongCaNhiem += profile.VI.arrayArea[i].count;
+          // }
+          // console.log(response);
+          // console.log(_tongCaNhiem);
+      });
+  });
   }
 }
 
@@ -1080,6 +1099,37 @@ function sendTypingOff(recipientId) {
  * get the message id in a response 
  *
  */
+function callSendAPICovid(sender_psid, response) {
+  // Construct the message body
+  let request_body = {
+    recipient: {
+      id: sender_psid
+    },
+    message: {
+      text: response
+    }
+  };
+  // Send the HTTP request to the Messenger Platform
+  request(
+    {
+      uri: "https://graph.facebook.com/v2.6/me/messages",
+      qs: {
+        access_token:
+          "EAATsECpjTqwBACUkBLHyn9nxy0eK1MW5mzZAAjla2Y9QhCObiXVqnpjfOBIWcWCBkT6ixblUiV6fV5V7ZBfCcd9ttiqGFFE4xS1mAQA4I8wyZAlw5sTyj3QApZBowd9DFxzwgO76bZCtif58jvIwht9Q8ICoDZATP3iTL9XvbEKwZDZD"
+      },
+      method: "POST",
+      json: request_body
+    },
+    (err, res, body) => {
+      if (!err) {
+        console.log("message sent!");
+      } else {
+        console.error("Unable to send message:" + err);
+      }
+    }
+  );
+}
+
 function callSendAPI(messageData) {
   request({
     uri: 'https://graph.facebook.com/v2.6/me/messages',
