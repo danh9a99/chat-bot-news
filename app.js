@@ -675,7 +675,7 @@ console.log("sendJsonMessage " + keyword);
       sendSingleJsonMessage(recipientId,customRules[keyword.toUpperCase()]);
   }
   else  if (keyword == "VN"){
-    stringText = "";
+    let stringText = "";
     https.get(`https://code.junookyo.xyz/api/ncov-moh/data.json`, res => {
       let body = "";
       // read data
