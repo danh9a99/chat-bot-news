@@ -557,6 +557,11 @@ function getCovidNews(){
   });
 }
 
+function haddlePostback(sender_psid, received_postback){
+  consosle.log("haddlePostback ok");
+
+  let payload = received_postback.payload;
+}
 
 function sendSingleJsonMessage(recipientId,filename) {
   console.log("sendSingleJsonMessage " + filename); 
@@ -693,8 +698,8 @@ var dataObj = []
   else if (_.has(customRules, keyword.toUpperCase())) {
       sendSingleJsonMessage(recipientId,customRules[keyword.toUpperCase()]);
   }
-  else  {
-      sendSingleJsonMessage(recipientId,"HOME.json");
+  else  if (keyword == "VN"){
+      consosle.log("VN keyword");
   }
 }
 
