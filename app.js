@@ -735,7 +735,8 @@ console.log("sendJsonMessage " + keyword);
   }
   else if (keyword == "top_10"){
     var most_cases = 0
-    var top = []
+    var top_cases = []
+    var top_countries = []
     https.get(`https://api.covid19api.com/summary`, res => {
       let body = "";
       // read data
@@ -747,18 +748,19 @@ console.log("sendJsonMessage " + keyword);
           var profile = JSON.parse(body);
           for(var i = 0; i <profile.Countries.length-1; i++){
               for(var j = i+1; j < profile.Countries.length; j++){
-                if (profile.Countries[i].TotalConfirmed < profile.Countries[j].TotalConfirmed){
-                    most_cases = profile.Countries[i].TotalConfirmed;
-                    profile.Countries[i].TotalConfirmed = profile.Countries[j].TotalConfirmed;
-                    profile.Countries[j].TotalConfirmed = most_cases;
+                if (profile.Countries[i] < profile.Countries[j]){
+                    most_cases = profile.Countries[i];
+                    profile.Countries[i] = profile.Countries[j];
+                    profile.Countries[j] = most_cases;
                 }
               }      
                      
           }
          for ( var index = 0; index < 10; index++){ 
-          top += profile.Countries[index].TotalConfirmed;
+          top_cases.push(profile.Countries[index].TotalConfirmed);
+          top_countries.push(profile.Countries[i].Country);
          }
-         callSendAPICovid(recipientId, top);
+         callSendAPICovid(recipientId,top_countries + ": " + top);
       });
   });
   }
