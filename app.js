@@ -757,10 +757,9 @@ console.log("sendJsonMessage " + keyword);
                      
           }
          for ( var index = 0; index < 10; index++){ 
-          top_cases.push(profile.Countries[index].TotalConfirmed);
-          top_countries.push(profile.Countries[index].Country);
+          top.push(profile.Countries[index].Country + " :" + profile.Countries[index].TotalConfirmed);
          }
-         callSendAPICovid(recipientId, top_countries + ": " + top_cases);
+         callSendAPICovid(recipientId,top);
       });
   });
   }
