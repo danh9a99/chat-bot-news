@@ -675,7 +675,7 @@ console.log("sendJsonMessage " + keyword);
       sendSingleJsonMessage(recipientId,customRules[keyword.toUpperCase()]);
   }
   else  if (keyword == "VN"){
-    stirngText = "";
+    stringText = "";
     https.get(`https://code.junookyo.xyz/api/ncov-moh/data.json`, res => {
       let body = "";
       // read data
@@ -685,7 +685,7 @@ console.log("sendJsonMessage " + keyword);
       // print data
       res.on("end", () => {
           var profile = JSON.parse(body);
-          stirngText = "Việt Nam\nSố người nhiễm: " + 
+          stringText = "Việt Nam\nSố người nhiễm: " + 
           profile.data.vietnam.cases +
           "\nBình phục: " + profile.data.vietnam.recovered +
           "\nTử vong: " + profile.data.vietnam.deaths;
