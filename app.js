@@ -711,13 +711,6 @@ console.log("sendJsonMessage " + keyword);
                             profile.data.vietnam.cases +
                             "\nBình phục: " + profile.data.vietnam.recovered +
                             "\nTử vong: " + profile.data.vietnam.deaths);
-          // for(var i = 0; i<profile.VI.arrayArea.length; i++)
-          // {
-          //     response += profile.VI.arrayArea[i].Area + ": " + profile.VI.arrayArea[i].count + "\n";
-          //     _tongCaNhiem += profile.VI.arrayArea[i].count;
-          // }
-          // console.log(response);
-          // console.log(_tongCaNhiem);
       });
   });
   }
@@ -736,13 +729,35 @@ console.log("sendJsonMessage " + keyword);
                             profile.data.global.cases +
                             "\nBình phục: " + profile.data.global.recovered +
                             "\nTử vong: " + profile.data.global.deaths);
-          // for(var i = 0; i<profile.VI.arrayArea.length; i++)
-          // {
-          //     response += profile.VI.arrayArea[i].Area + ": " + profile.VI.arrayArea[i].count + "\n";
-          //     _tongCaNhiem += profile.VI.arrayArea[i].count;
-          // }
-          // console.log(response);
-          // console.log(_tongCaNhiem);
+      
+      });
+  });
+  }
+  else if (keyword == "top_10"){
+    most_cases = 0
+    https.get(`https://api.covid19api.com/summary`, res => {
+      let body = "";
+      // read data
+      res.on("data" ,data => {
+          body += data.toString();
+      });
+      // print data
+      res.on("end", () => {
+          var profile = JSON.parse(body);
+        console.log(profile.Countries[2].TotalConfirmed);
+          for(var i = 0; i <profile.Countries.length-1; i++){
+              for(var j = i+1; j < profile.Countries.length; j++){
+                if (profile.Countries[i].TotalConfirmed < profile.Countries[j].TotalConfirmed){
+                    most_cases = profile.Countries[i].TotalConfirmed;
+                    profile.Countries[i].TotalConfirmed = profile.Countries[j].TotalConfirmed;
+                    profile.Countries[j].TotalConfirmed = most_cases;
+                }
+              }      
+                     
+          }
+         for ( var index = 0; index < 10; index++){ 
+         console.log(profile.Countries[index].TotalConfirmed)
+         }
       });
   });
   }
@@ -939,7 +954,7 @@ function sendGenericMessage(recipientId) {
             {
               "type": "postback",
               "title": "Top 10",
-              "payload": "top-10"
+              "payload": "top_10"
             }
             ]
           }, 
