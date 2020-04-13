@@ -699,7 +699,7 @@ var dataObj = []
       sendSingleJsonMessage(recipientId,customRules[keyword.toUpperCase()]);
   }
   else  if (keyword == "VN"){
-      consosle.log("VN keyword");
+      console.log("VN keyword");
   }
 }
 
