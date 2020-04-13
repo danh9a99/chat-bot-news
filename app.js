@@ -709,7 +709,10 @@ var dataObj = []
       res.on("end", () => {
           var profile = JSON.parse(body);
           
-          callSendAPICovid(recipientId, profile.data.global.cases);
+          callSendAPICovid(recipientId,"Việt Nam\nSố người nhiễm: " + 
+                            profile.data.vietnam.cases +
+                            "\nBình phục: " + profile.data.vietnam.recovered +
+                            "\nTử vong: " + profile.data.vietnam.deaths);
           // for(var i = 0; i<profile.VI.arrayArea.length; i++)
           // {
           //     response += profile.VI.arrayArea[i].Area + ": " + profile.VI.arrayArea[i].count + "\n";
