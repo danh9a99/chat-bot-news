@@ -22,7 +22,7 @@
             },
             {
               "type": "postback",
-              "title": "Top 10",
+              "title": "top_10",
               "payload": "Contact"
             }
             ]
