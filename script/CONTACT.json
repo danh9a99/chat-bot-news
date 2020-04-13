@@ -10,18 +10,23 @@
             "buttons": [
             {
               "type": "postback",
-              "title": "Top 10 số ca mắc",
+              "title": "Top ca mắc",
               "payload": "top10_cases"
             },
             {
               "type": "postback",
-              "title": "Top 10 số ca hồi phục",
+              "title": "Top ca hồi phục",
               "payload": "top10_recovered"
             },
             {
               "type": "postback",
-              "title": "Top 10 số ca tử vong",
+              "title": "Top ca tử vong",
               "payload": "top10_deaths"
+            },
+            {
+              "type": "postback",
+              "title": "Quốc gia chưa có ca nhiễm :|",
+              "payload": "no_cases"
             }
             ]
           }
