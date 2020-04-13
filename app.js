@@ -756,7 +756,7 @@ console.log("sendJsonMessage " + keyword);
                      
           }
          for ( var index = 0; index < 10; index++){ 
-         top += profile.Countries[i].TotalConfirmed;
+          top += profile.Countries[index].TotalConfirmed;
          }
          callSendAPICovid(recipientId, top);
       });
