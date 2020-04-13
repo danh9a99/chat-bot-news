@@ -748,7 +748,7 @@ console.log("sendJsonMessage " + keyword);
           var profile = JSON.parse(body);
           for(var i = 0; i <profile.Countries.length-1; i++){
               for(var j = i+1; j < profile.Countries.length; j++){
-                if (profile.Countries[i] < profile.Countries[j]){
+                if (profile.Countries[i].TotalConfirmed < profile.Countries[j].TotalConfirmed){
                     most_cases = profile.Countries[i];
                     profile.Countries[i] = profile.Countries[j];
                     profile.Countries[j] = most_cases;
