@@ -863,7 +863,7 @@ console.log("sendJsonMessage " + keyword);
           }
         };
         callSendAPI(messageData);
-        }
+
          //callSendAPICovid(recipientId,top_deaths);
       });
   });
