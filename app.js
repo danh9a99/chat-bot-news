@@ -887,7 +887,7 @@ console.log("sendJsonMessage " + keyword);
             if(tyLe < profile.Countries[i].TotalDeaths / profile.Countries[i].TotalConfirmed * 100){
               tyLe = profile.Countries[i].TotalDeaths / profile.Countries[i].TotalConfirmed * 100
               country_string = profile.Countries[i].Country;
-              info_country += profile.Countries[i].Country + "\n" + profile.Countries[i].TotalConfirmed + "\n" + profile.Countries[i].TotalRecovered + "\n" + profile.Countries[i].TotalDeaths;
+              info_country = profile.Countries[i].Country + "\n" + profile.Countries[i].TotalConfirmed + "\n" + profile.Countries[i].TotalRecovered + "\n" + profile.Countries[i].TotalDeaths;
             }
           }
           string_tyle = string_tyle + country_string + " với tỷ lệ: " + tyLe + "%" + "\n\n" + info_country;
