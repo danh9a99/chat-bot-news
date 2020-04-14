@@ -890,7 +890,7 @@ console.log("sendJsonMessage " + keyword);
               info_country = profile.Countries[i].Country + "\nSố ca nhiễm: " + profile.Countries[i].TotalConfirmed + "\nHồi phục: " + profile.Countries[i].TotalRecovered + "\nTử vong: " + profile.Countries[i].TotalDeaths;
             }
           }
-          string_tyle = string_tyle + country_string + " với tỷ lệ: " + tyLe + "%" + "\n\n" + info_country;
+          string_tyle = string_tyle + country_string + " với: " + tyLe + "%" + "\n\n" + info_country;
           var messageData = {
             recipient: {
               id: recipientId
