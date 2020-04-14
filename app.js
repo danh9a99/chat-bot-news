@@ -744,7 +744,7 @@ console.log("sendJsonMessage " + keyword);
   }
   else if (keyword == "top10_cases"){
     var most_cases = 0
-    let top_cases ="";
+    let top_cases ="TOP CA NHIỄM\n\n";
     var top_countries = []
     https.get(`https://api.covid19api.com/summary`, res => {
       let body = "";
@@ -779,7 +779,7 @@ console.log("sendJsonMessage " + keyword);
   }
   else if (keyword == "top10_recovered"){
     var most_cases = 0
-    let top_recovered ="";
+    let top_recovered ="TOP HỒI PHỤC\n\n";
     var top_countries = []
     https.get(`https://api.covid19api.com/summary`, res => {
       let body = "";
@@ -814,7 +814,7 @@ console.log("sendJsonMessage " + keyword);
 
   else if (keyword == "top10_deaths"){
     var most_cases = 0
-    let top_deaths ="TOP TỬ VONG\n";
+    let top_deaths ="TOP TỬ VONG\n\n";
     var top_countries = []
     https.get(`https://api.covid19api.com/summary`, res => {
       let body = "";
@@ -842,9 +842,30 @@ console.log("sendJsonMessage " + keyword);
            }
            top_deaths = top_deaths + temp + ". " + profile.Countries[index].Country + ": " + profile.Countries[index].TotalDeaths + "\n";
          }
-         callSendAPICovid(recipientId,top_deaths);
+         //callSendAPICovid(recipientId,top_deaths);
       });
   });
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      text: top_deaths,
+      quick_replies: [
+        {
+          "content_type":"text",
+          "title":"Tỉ lệ tử vong cao nhất? 😔",
+          "payload":"ty_le_tu_vong_cao_nhat"
+        },   
+        {
+          "content_type":"text",
+          "title":"Home",
+          "payload":"home"
+        }
+      ]
+    }
+  };
+  callSendAPI(messageData);
   }
 }
 
