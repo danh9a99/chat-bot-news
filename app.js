@@ -766,7 +766,7 @@ console.log("sendJsonMessage " + keyword);
                      
           }
          for ( var index = 0; index < 10; index++){ 
-           top_cases = top_cases + profile.Countries[index].Country + ": " + profile.Countries[index].TotalConfirmed + "\n";
+           top_cases = top_cases + i + " " + profile.Countries[index].Country + ": " + profile.Countries[index].TotalConfirmed + "\n";
          }
          callSendAPICovid(recipientId,top_cases);
       });
@@ -797,7 +797,7 @@ console.log("sendJsonMessage " + keyword);
                      
           }
          for ( var index = 0; index < 10; index++){ 
-           top_recovered = top_recovered + profile.Countries[index].Country + ": " + profile.Countries[index].TotalRecovered + "\n";
+           top_recovered = top_recovered + i + ". " + profile.Countries[index].Country + ": " + profile.Countries[index].TotalRecovered + "\n";
          }
          callSendAPICovid(recipientId,top_recovered);
       });
@@ -828,7 +828,7 @@ console.log("sendJsonMessage " + keyword);
                      
           }
          for ( var index = 0; index < 10; index++){ 
-           top_deaths = top_deaths + profile.Countries[index].Country + ": " + profile.Countries[index].TotalDeaths + "\n";
+           top_deaths = top_deaths + i + " " + profile.Countries[index].Country + ": " + profile.Countries[index].TotalDeaths + "\n";
          }
          callSendAPICovid(recipientId,top_deaths);
       });
