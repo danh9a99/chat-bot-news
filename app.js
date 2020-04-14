@@ -883,7 +883,7 @@ console.log("sendJsonMessage " + keyword);
       res.on("end", () => {
           var profile = JSON.parse(body);
           tyLe = profile.Countries[0].TotalDeaths/profile.TotalConfirmed * 100;
-          for(var i = 1 ; i < profile.Countries[i].length; i ++){
+          for(var i = 1 ; i < profile.Countries.length; i ++){
             if(tyLe < profile.Countries[i].TotalDeaths / profile.Countries[i].TotalConfirmed * 100){
               tyLe = profile.Countries[i].TotalDeaths / profile.Countries[i].TotalConfirmed * 100
               string = profile.Countries[i].Country;
