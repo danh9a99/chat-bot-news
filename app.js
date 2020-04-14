@@ -853,7 +853,7 @@ console.log("sendJsonMessage " + keyword);
             quick_replies: [
               {
                 "content_type":"text",
-                "title":"tỷ lệ tử vong 😔",
+                "title":"Tỷ lệ tử vong 😔",
                 "payload":"ty_le_tu_vong_cao_nhat"
               },   
               {
@@ -867,7 +867,32 @@ console.log("sendJsonMessage " + keyword);
         callSendAPI(messageData);
       });
   });
-  
+  }
+  else if (keyword == "ty_le_tu_vong_cao_nhat"){
+    var most_cases = 0
+    let string_tyle = "Tỷ lệ tử vong cao nhất ở: ";
+    var tyLe = 0;
+    var country_string = "";
+    https.get(`https://api.covid19api.com/summary`, res => {
+      let body = "";
+      // read data
+      res.on("data" ,data => {
+          body += data.toString();
+      });
+      // print data
+      res.on("end", () => {
+          var profile = JSON.parse(body);
+          tyLe = profile.Countries[0].TotalDeaths/profile.TotalConfirmed * 100;
+          for(var i = 1 ; i < profile.Countries[i].length; i ++){
+            if(tyLe < profile.Countries[i].TotalDeaths / profile.Countries[i].TotalConfirmed * 100){
+              tyLe = profile.Countries[i].TotalDeaths / profile.Countries[i].TotalConfirmed * 100
+              string = profile.Countries[i].Country;
+            }
+          }
+          string_tyle = string_tyle + country_string + "với tỷ lệ: " + tyLe;
+          callSendAPICovid(recipientId,string_tyle);
+      });
+  });
   }
 }
 
