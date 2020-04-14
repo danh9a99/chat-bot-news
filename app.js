@@ -870,9 +870,9 @@ console.log("sendJsonMessage " + keyword);
   }
   else if (keyword == "ty_le_tu_vong_cao_nhat"){
     var most_cases = 0
-    let string_tyle = "Tỷ lệ tử vong cao nhất ở: ";
+    let string_tyle = "Tỷ lệ tử vong cao nhất ở ";
     var tyLe = 0;
-    var country_string = "";
+    let country_string = "";
     https.get(`https://api.covid19api.com/summary`, res => {
       let body = "";
       // read data
@@ -881,8 +881,7 @@ console.log("sendJsonMessage " + keyword);
       });
       // print data
       res.on("end", () => {
-          var profile = JSON.parse(body);
-          tyLe = profile.Countries[0].TotalDeaths/profile.TotalConfirmed * 100;
+          var profile = JSON.parse(body);         
           for(var i = 1 ; i < profile.Countries.length; i ++){
             if(tyLe < profile.Countries[i].TotalDeaths / profile.Countries[i].TotalConfirmed * 100){
               tyLe = profile.Countries[i].TotalDeaths / profile.Countries[i].TotalConfirmed * 100
