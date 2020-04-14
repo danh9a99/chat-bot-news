@@ -843,30 +843,31 @@ console.log("sendJsonMessage " + keyword);
            top_deaths = top_deaths + temp + ". " + profile.Countries[index].Country + ": " + profile.Countries[index].TotalDeaths + "\n";
          }
          
-         callSendAPICovid(recipientId,top_deaths);
+         //callSendAPICovid(recipientId,top_deaths);
+         var messageData = {
+          recipient: {
+            id: recipientId
+          },
+          message: {      
+            text: top_deaths,   
+            quick_replies: [
+              {
+                "content_type":"text",
+                "title":"tỷ lệ tử vong 😔",
+                "payload":"ty_le_tu_vong_cao_nhat"
+              },   
+              {
+                "content_type":"text",
+                "title":"Home",
+                "payload":"home"
+              }
+            ]
+          }
+        };
+        callSendAPI(messageData);
       });
   });
-  var messageData = {
-    recipient: {
-      id: recipientId
-    },
-    message: {      
-      text: "",   
-      quick_replies: [
-        {
-          "content_type":"text",
-          "title":"tỷ lệ tử vong 😔",
-          "payload":"ty_le_tu_vong_cao_nhat"
-        },   
-        {
-          "content_type":"text",
-          "title":"Home",
-          "payload":"home"
-        }
-      ]
-    }
-  };
-  callSendAPI(messageData);
+  
   }
 }
 
