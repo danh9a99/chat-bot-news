@@ -766,7 +766,10 @@ console.log("sendJsonMessage " + keyword);
                      
           }
          for ( var index = 0; index < 10; index++){ 
-          var temp = index + 1
+          var temp = index + 1;
+          if(profile.Countries[i].Country == "United States of America"){
+            profile.Countries[i].Country = "USA"
+           }
            top_cases = top_cases + temp + ". " + profile.Countries[index].Country + ": " + profile.Countries[index].TotalConfirmed + "\n";
          }
          callSendAPICovid(recipientId,top_cases);
@@ -799,6 +802,9 @@ console.log("sendJsonMessage " + keyword);
           }
          for ( var index = 0; index < 10; index++){ 
            var temp = index + 1
+           if(profile.Countries[i].Country == "United States of America"){
+            profile.Countries[i].Country = "USA"
+           }
            top_recovered = top_recovered + temp + ". " + profile.Countries[index].Country + ": " + profile.Countries[index].TotalRecovered + "\n";
          }
          callSendAPICovid(recipientId,top_recovered);
@@ -808,7 +814,7 @@ console.log("sendJsonMessage " + keyword);
 
   else if (keyword == "top10_deaths"){
     var most_cases = 0
-    let top_deaths ="";
+    let top_deaths ="TOP TỬ VONG\n";
     var top_countries = []
     https.get(`https://api.covid19api.com/summary`, res => {
       let body = "";
@@ -830,7 +836,10 @@ console.log("sendJsonMessage " + keyword);
                      
           }
          for ( var index = 0; index < 10; index++){ 
-          var temp = index + 1
+          var temp = index + 1;
+          if(profile.Countries[i].Country == "United States of America"){
+            profile.Countries[i].Country = "USA"
+           }
            top_deaths = top_deaths + temp + ". " + profile.Countries[index].Country + ": " + profile.Countries[index].TotalDeaths + "\n";
          }
          callSendAPICovid(recipientId,top_deaths);
