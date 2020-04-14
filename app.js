@@ -885,7 +885,7 @@ console.log("sendJsonMessage " + keyword);
           for(var i = 1 ; i < profile.Countries.length; i ++){
             if(tyLe < profile.Countries[i].TotalDeaths / profile.Countries[i].TotalConfirmed * 100){
               tyLe = profile.Countries[i].TotalDeaths / profile.Countries[i].TotalConfirmed * 100
-              string = profile.Countries[i].Country;
+              country_string = profile.Countries[i].Country;
             }
           }
           string_tyle = string_tyle + country_string + "với tỷ lệ: " + tyLe;
