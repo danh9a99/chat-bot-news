@@ -888,7 +888,7 @@ console.log("sendJsonMessage " + keyword);
               country_string = profile.Countries[i].Country;
             }
           }
-          string_tyle = string_tyle + country_string + "với tỷ lệ: " + tyLe;
+          string_tyle = string_tyle + country_string + "với tỷ lệ: " + tyLe + "%";
           callSendAPICovid(recipientId,string_tyle);
       });
   });
