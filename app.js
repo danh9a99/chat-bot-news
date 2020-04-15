@@ -1514,7 +1514,7 @@ function addPersistentMenu(){
         //   ]
         // },
         {
-          "type":"web_url",
+          "type": "postback",
           "title":"About me",
           "payload": "about_me"
         }
