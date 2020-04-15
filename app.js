@@ -767,9 +767,12 @@ console.log("sendJsonMessage " + keyword);
           }
          for ( var index = 0; index < 10; index++){ 
           var temp = index + 1;
-          if(profile.Countries[i].Country == "United States of America"){
-            profile.Countries[i].Country = "USA"
+          if(profile.Countries[index].Country == "United States of America"){
+            profile.Countries[index].Country = "United States"
            }
+           if(profile.Countries[index].CountryCode == "IR"){
+            profile.Countries[index].Country = "Iran"
+          }
            top_cases = top_cases + temp + ". " + profile.Countries[index].Country + ": " + profile.Countries[index].TotalConfirmed + "\n";
          }
          callSendAPICovid(recipientId,top_cases);
@@ -802,9 +805,12 @@ console.log("sendJsonMessage " + keyword);
           }
          for ( var index = 0; index < 10; index++){ 
            var temp = index + 1
-           if(profile.Countries[i].Country == "United States of America"){
-            profile.Countries[i].Country = "USA"
+           if(profile.Countries[index].Country == "United States of America"){
+            profile.Countries[index].Country = "United States"
            }
+           if(profile.Countries[index].CountryCode == "IR"){
+            profile.Countries[index].Country = "Iran"
+          }
            top_recovered = top_recovered + temp + ". " + profile.Countries[index].Country + ": " + profile.Countries[index].TotalRecovered + "\n";
          }
          callSendAPICovid(recipientId,top_recovered);
@@ -837,9 +843,12 @@ console.log("sendJsonMessage " + keyword);
           }
          for ( var index = 0; index < 10; index++){ 
           var temp = index + 1;
-          if(profile.Countries[i].Country == "United States of America"){
-            profile.Countries[i].Country = "USA"
+          if(profile.Countries[index].Country == "United States of America"){
+            profile.Countries[index].Country = "United States"
            }
+           if(profile.Countries[index].CountryCode == "IR"){
+            profile.Countries[index].Country = "Iran"
+          }
            top_deaths = top_deaths + temp + ". " + profile.Countries[index].Country + ": " + profile.Countries[index].TotalDeaths + "\n";
          }
          
