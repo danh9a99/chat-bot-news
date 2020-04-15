@@ -943,6 +943,24 @@ console.log("sendJsonMessage " + keyword);
     };
     callSendAPI(messageData);
   }
+  else if(keyword == "about_me"){
+    var messageData = {
+      recipient: {
+        id: recipientId
+      },
+      message: {      
+        text: "Tôi được tạo bởi Bapp, người muốn tôi sẽ giúp các bạn nắm được thông tin về tình hình dịch bệnh Covid-19",   
+        quick_replies: [
+          {
+            "content_type":"text",
+            "title":"Home",
+            "payload":"home"
+          }
+        ]
+      }
+    };
+    callSendAPI(messageData);
+  }
 }
 
 /*
@@ -1473,7 +1491,7 @@ function addPersistentMenu(){
           "title":"Joke",
           "type":"postback",
           "payload":"joke"
-        }
+        },
         // {
         //   "title":"Nested Menu Example",
         //   "type":"nested",
@@ -1495,12 +1513,11 @@ function addPersistentMenu(){
         //     }
         //   ]
         // },
-        // {
-        //   "type":"web_url",
-        //   "title":"Latest News",
-        //   "url":"http://foxnews.com",
-        //   "webview_height_ratio":"full"
-        // }
+        {
+          "type":"web_url",
+          "title":"About me",
+          "payload": "about_me"
+        }
       ]
     },
     {
