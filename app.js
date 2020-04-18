@@ -1355,8 +1355,8 @@ function callSendAPICovid(sender_psid, response) {
     {
       uri: "https://graph.facebook.com/v2.6/me/messages",
       qs: {
-        access_token:
-          "EAATsECpjTqwBACUkBLHyn9nxy0eK1MW5mzZAAjla2Y9QhCObiXVqnpjfOBIWcWCBkT6ixblUiV6fV5V7ZBfCcd9ttiqGFFE4xS1mAQA4I8wyZAlw5sTyj3QApZBowd9DFxzwgO76bZCtif58jvIwht9Q8ICoDZATP3iTL9XvbEKwZDZD"
+        access_token: PAGE_ACCESS_TOKEN
+  
       },
       method: "POST",
       json: request_body
