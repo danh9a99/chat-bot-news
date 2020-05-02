@@ -1003,6 +1003,11 @@ console.log("sendJsonMessage " + keyword);
                           "type": "postback",
                           "title": "Đọc nhanh",
                           "payload": "doc-nhanh-1"
+                        },
+                        {
+                          "type": "web_url",
+                          "url": profile.data.output.links[0],
+                          "title": "Truy cập"
                         }
                        
                         ]
