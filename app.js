@@ -990,23 +990,24 @@ console.log("sendJsonMessage " + keyword);
               "attachment": {
                 "type": "template",
                 "payload": {
-                 "template_type": "generic",
+                 "template_type": "button",
                   "elements": [
                   {
                     "title": stringTitle,                           
-                    "image_url": stringImage,                   
-                    "button": [
-                      {
-                        "type": "postback",
-                        "title": "Đọc nhanh",
-                        "playload": "doc-nhanh-1"
-                      },
-                      {
-                        "type": "web_url",
-                        "url": stringLink,
-                        "title": "Truy cập"
-                      }
-                    ]
+                    "image_url": stringImage,
+                    "text": stringDescription                   
+                    // "button": [
+                    //   {
+                    //     "type": "postback",
+                    //     "title": "Đọc nhanh",
+                    //     "playload": "doc-nhanh-1"
+                    //   },
+                    //   {
+                    //     "type": "web_url",
+                    //     "url": stringLink,
+                    //     "title": "Truy cập"
+                    //   }
+                    // ]
                   }          
                   ]
                 }
