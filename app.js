@@ -985,29 +985,29 @@ console.log("sendJsonMessage " + keyword);
                 "payload": {
                  "template_type": "generic",
                   "elements": [
-                  // {
-                  //   "title": profile.data.output.titles[1],
-                  //   "subtitle": "Thống kê tình hình dịch",
-                  //   "item_url": profile.data.output.links[1],               
-                  //   "image_url": profile.data.output.images[1],
-                  //   // "buttons": [
-                  //   // {
-                  //   //   "type": "postback",
-                  //   //   "title": "Việt Nam",
-                  //   //   "payload": "VN"
-                  //   // },
-                  //   // {
-                  //   //   "type": "postback",
-                  //   //   "title": "Thế giới",
-                  //   //   "payload": "GB"
-                  //   // },
-                  //   // {
-                  //   //   "type": "postback",
-                  //   //   "title": "Top 10",
-                  //   //   "payload": "contact"
-                  //   // }
-                  //   // ]
-                  // },
+                  {
+                    "title": profile.data.output.titles[1],
+                    "subtitle": "Thống kê tình hình dịch",
+                    "item_url": profile.data.output.links[1],               
+                    "image_url": profile.data.output.images[1],
+                    "buttons": [
+                    {
+                      "type": "postback",
+                      "title": "Việt Nam",
+                      "payload": "VN"
+                    },
+                    {
+                      "type": "postback",
+                      "title": "Thế giới",
+                      "payload": "GB"
+                    },
+                    {
+                      "type": "postback",
+                      "title": "Top 10",
+                      "payload": "contact"
+                    }
+                    ]
+                  },
                   {
                     "title": "vnexpress.net", 
                     "subtitle": "Tôi sẽ tổng hợp tin tức từ trang #vnexpress",
