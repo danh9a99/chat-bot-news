@@ -994,19 +994,15 @@ console.log("sendJsonMessage " + keyword);
                   
                   "elements": [
                     {
-                      "title": "Classic T-Shirt Collection",
-                      "subtitle": "See all our colors",
+                      "title": stringTitle,
+                      "subtitle": "",
                       "image_url": stringImage,                    
                       "buttons": [
+                        
                         {
                           "type": "postback",
-                          "title": "Việt Nam",
-                          "payload": "VN"
-                        },
-                        {
-                          "type": "postback",
-                          "title": "Thế giới",
-                          "payload": "GB"
+                          "title": "Đọc nhanh",
+                          "payload": "doc-nhanh-1"
                         },
                         {
                           "type": "postback",
