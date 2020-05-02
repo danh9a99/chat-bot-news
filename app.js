@@ -1045,7 +1045,6 @@ console.log("sendJsonMessage " + keyword);
       res.on("end", () => {
           var profile = JSON.parse(body);         
           stringDescription == profile.data.output.descriptions[0];
-          console.log(stringImage);
           var messageData = {
             recipient: {
               id: recipientId
