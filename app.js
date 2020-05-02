@@ -1227,9 +1227,8 @@ function sendJoke(recipientId) {
           "elements": [
         
           {
-            "title": "vnexpress.net", 
-            "subtitle": "Tôi sẽ tổng hợp tin tức từ trang #vnexpress",
-            "item_url": "vnexpress.net",             
+            "title": "TIN TỨC", 
+            "subtitle": "Dữ liệu lấy từ #vnexpress",           
             "image_url": "https://raw.githubusercontent.com/danh9a99/chat-bot-news/master/img/express_logo.png",
             "buttons": [
             {
