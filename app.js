@@ -992,8 +992,8 @@ console.log("sendJsonMessage " + keyword);
               "attachment": {
                 "type": "template",
                 "payload": {
-                  "template_type": "generic",
-                  
+                  "template_type": "list",
+                  "top_element_style": "large",
                   "elements": [
                     {
                       "title": stringTitle,
@@ -1018,7 +1018,7 @@ console.log("sendJsonMessage " + keyword);
                       "title": profile.data.output.titles[1],
                       "subtitle": "",
                       "item_url": stringLink,
-                      "image_url":stringImage,                    
+                      "image_url":"https://raw.githubusercontent.com/danh9a99/chat-bot-news/master/img/express_logo.png",                    
                       "buttons": [    
                         {
                           "type": "postback",
@@ -1037,7 +1037,7 @@ console.log("sendJsonMessage " + keyword);
                       "title": profile.data.output.titles[2],
                       "subtitle": "",
                       "item_url": stringLink,
-                      "image_url": stringImage,                    
+                      "image_url": "https://raw.githubusercontent.com/danh9a99/chat-bot-news/master/img/express_logo.png",                    
                       "buttons": [    
                         {
                           "type": "postback",
