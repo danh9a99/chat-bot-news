@@ -1114,7 +1114,83 @@ console.log("sendJsonMessage " + keyword);
       });
   });
   }
+  else if(keyword == "doc-nhanh-2"){
+    let stringDescription = "";
+    https.get(`https://wrapapi.com/use/bapp-it17/vnexpress/suckhoe/0.0.1?wrapAPIKey=j751CwjyTl5L6re4c1SiUWiKaGtWJlb7`, res => {
+      let body = "";
+      // read data
+      res.on("data" ,data => {
+          body += data.toString();
+      });
+      // print data
+      res.on("end", () => {
+          var profile = JSON.parse(body);         
+          stringDescription == "<test>" + profile.data.output.descriptions[0];
+          console.log(stringDescription);
+          var messageData = {
+            recipient: {
+              id: recipientId
+            },
+            message: {      
+              text:  profile.data.output.descriptions[1],   
+              quick_replies: [
+                {
+                  "content_type":"text",
+                  "title":"Tin khác",
+                  "payload":"tin-khac"
+                },   
+                {
+                  "content_type":"text",
+                  "title":"Home",
+                  "payload":"home"
+                }
+              ]
+            }
+          };
+        
+          callSendAPI(messageData);
+      });
+  });
+  }
 
+  else if(keyword == "doc-nhanh-3"){
+    let stringDescription = "";
+    https.get(`https://wrapapi.com/use/bapp-it17/vnexpress/suckhoe/0.0.1?wrapAPIKey=j751CwjyTl5L6re4c1SiUWiKaGtWJlb7`, res => {
+      let body = "";
+      // read data
+      res.on("data" ,data => {
+          body += data.toString();
+      });
+      // print data
+      res.on("end", () => {
+          var profile = JSON.parse(body);         
+          stringDescription == "<test>" + profile.data.output.descriptions[0];
+          console.log(stringDescription);
+          var messageData = {
+            recipient: {
+              id: recipientId
+            },
+            message: {      
+              text:  profile.data.output.descriptions[1],   
+              quick_replies: [
+                {
+                  "content_type":"text",
+                  "title":"Tin khác",
+                  "payload":"tin-khac"
+                },   
+                {
+                  "content_type":"text",
+                  "title":"Home",
+                  "payload":"home"
+                }
+              ]
+            }
+          };
+        
+          callSendAPI(messageData);
+      });
+  });
+  }  
 }
 
 /*
