@@ -980,6 +980,8 @@ console.log("sendJsonMessage " + keyword);
           stringDescription = profile.data.output.descriptions[0];
           stringImage = profile.data.output.images[0];
           stringLink == profile.data.output.links[0];
+
+          
           console.log(stringImage);
           var messageData = {
             recipient: {
@@ -1011,7 +1013,47 @@ console.log("sendJsonMessage " + keyword);
                         }
                        
                         ]
+                    },
+                    {
+                      "title": profile.data.output.titles[1],
+                      "subtitle": "",
+                      "item_url": stringLink,
+                      "image_url": profile.data.output.images[1],                    
+                      "buttons": [    
+                        {
+                          "type": "postback",
+                          "title": "Đọc nhanh",
+                          "payload": "doc-nhanh-2"
+                        },
+                        {
+                          "type": "web_url",
+                          "url": profile.data.output.links[1],
+                          "title": "Truy cập"
+                        }
+                       
+                        ]
+                    },
+                    {
+                      "title": profile.data.output.titles[2],
+                      "subtitle": "",
+                      "item_url": stringLink,
+                      "image_url": profile.data.output.images[2],                    
+                      "buttons": [    
+                        {
+                          "type": "postback",
+                          "title": "Đọc nhanh",
+                          "payload": "doc-nhanh-3"
+                        },
+                        {
+                          "type": "web_url",
+                          "url": profile.data.output.links[2],
+                          "title": "Truy cập"
+                        }
+                       
+                        ]
                     }
+                  
+                    
                     // {
                     //   "title": "Classic White T-Shirt",
                     //   "image_url": stringImage,
