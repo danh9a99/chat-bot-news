@@ -1048,7 +1048,7 @@ console.log("sendJsonMessage " + keyword);
               id: recipientId
             },
             message: {      
-              text: stringDescription,   
+              text:  profile.data.output.descriptions[0],   
               quick_replies: [
                 {
                   "content_type":"text",
