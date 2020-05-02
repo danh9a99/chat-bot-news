@@ -994,9 +994,10 @@ console.log("sendJsonMessage " + keyword);
                   "elements": [
                   {
                     "title": stringTitle,
-                    "subtitle": stringDescription,
-                    "item_url": stringLink,               
-                    "image_url": stringImage,
+                    
+                    "item_url": stringLink,
+                    "subtitle": stringDescription,               
+                    "image_url": stringImage,                   
                   
                   },
                   {
