@@ -1157,17 +1157,6 @@ function sendGenericMessage(recipientId) {
               "payload": "contact"
             }
             ]
-          }, 
-          {
-            "title": "Cá nhân hóa",              
-            "image_url": "https://raw.githubusercontent.com/danh9a99/fb-robot/master/img/robot.png",
-            "buttons": [
-            {
-              "type": "postback",
-              "title": "Tùy chỉnh bot",
-              "payload": "custom"
-            }
-            ]
           },
           {
             "title": "vnexpress.net", 
@@ -1179,6 +1168,17 @@ function sendGenericMessage(recipientId) {
               "type": "postback",
               "title": "Tin nhanh",
               "payload": "tin-nhanh"
+            }
+            ]
+          },
+          {
+            "title": "Cá nhân hóa",              
+            "image_url": "https://raw.githubusercontent.com/danh9a99/fb-robot/master/img/robot.png",
+            "buttons": [
+            {
+              "type": "postback",
+              "title": "Tùy chỉnh bot",
+              "payload": "custom"
             }
             ]
           }
