@@ -973,7 +973,7 @@ console.log("sendJsonMessage " + keyword);
       // print data
       res.on("end", () => {
           var profile = JSON.parse(body);
-         
+          stringText = profile.data.output.title[1]
           var messageData = {
             recipient: {
               id: recipientId
@@ -986,10 +986,10 @@ console.log("sendJsonMessage " + keyword);
                  "template_type": "generic",
                   "elements": [
                   {
-                    "title": profile.data.output.titles[1],
+                    "title": stringText,
                     "subtitle": "Thống kê tình hình dịch",
-                    "item_url": profile.data.output.links[1],               
-                    "image_url": profile.data.output.images[1],
+                    "item_url": "fb.com/giunmoc",               
+                    "image_url": "",
                     "buttons": [
                     {
                       "type": "postback",
