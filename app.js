@@ -993,9 +993,7 @@ console.log("sendJsonMessage " + keyword);
                  "template_type": "generic",
                   "elements": [
                   {
-                    "title": stringTitle,
-                    "item_url": stringLink,
-                    "subtitle": stringDescription,               
+                    "title": stringTitle,                           
                     "image_url": stringImage,                   
                     "button": [
                       {
