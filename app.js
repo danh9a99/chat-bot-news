@@ -612,10 +612,7 @@ function sendCustomMessage(recipientId,messageText) {
 console.log("sendCustoMessage "+ messageText);
 
     switch (messageText.toLowerCase()) {
-
-      case 'joke':
-        sendJoke(recipientId);
-        break        
+         
 
       case 'image':
         sendRandomImage(recipientId);
