@@ -1004,9 +1004,9 @@ console.log("sendJsonMessage " + keyword);
                           "payload": "doc-nhanh-1"
                         },
                         {
-                          "type": "postback",
-                          "title": "Top 10",
-                          "payload": "contact"
+                          "type": "web_url",
+                          "url": stringLink,
+                          "title": "Truy cập"
                         }
                         ]
                     }
@@ -1034,7 +1034,7 @@ console.log("sendJsonMessage " + keyword);
   }
 
   else if(keyword == "doc-nhanh-1"){
-    let stringLink = "";
+    let stringDescription = "";
     https.get(`https://wrapapi.com/use/bapp-it17/vnexpress/suckhoe/0.0.1?wrapAPIKey=j751CwjyTl5L6re4c1SiUWiKaGtWJlb7`, res => {
       let body = "";
       // read data
@@ -1044,7 +1044,7 @@ console.log("sendJsonMessage " + keyword);
       // print data
       res.on("end", () => {
           var profile = JSON.parse(body);         
-          stringLink == profile.data.output.links[0];
+          stringDescription == profile.data.output.descriptions[0];
           console.log(stringImage);
           var messageData = {
             recipient: {
