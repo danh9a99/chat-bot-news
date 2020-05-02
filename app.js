@@ -966,6 +966,7 @@ console.log("sendJsonMessage " + keyword);
     let stringTitle = "";
     let stringDescription = "";
     let stringImage = "";
+    let stringLink = "";
     https.get(`https://wrapapi.com/use/bapp-it17/vnexpress/suckhoe/0.0.1?wrapAPIKey=j751CwjyTl5L6re4c1SiUWiKaGtWJlb7`, res => {
       let body = "";
       // read data
@@ -975,9 +976,10 @@ console.log("sendJsonMessage " + keyword);
       // print data
       res.on("end", () => {
           var profile = JSON.parse(body);
-          stringTitle = profile.data.output.titles[1];
-          stringDescription = profile.data.output.descriptions[1];
-          stringImage = profile.data.output.images[1];
+          stringTitle = profile.data.output.titles[0];
+          stringDescription = profile.data.output.descriptions[0];
+          stringImage = profile.data.output.images[0];
+          stringLink == profile.data.output.links[0];
           console.log(stringImage);
           var messageData = {
             recipient: {
@@ -992,17 +994,10 @@ console.log("sendJsonMessage " + keyword);
                   "elements": [
                   {
                     "title": stringTitle,
-                    "subtitle": stringDescription,
-                    "item_url": "fb.com/giunmoc",               
+                    "text": stringDescription,
+                    "item_url": stringLink,               
                     "image_url": "",
-                    "buttons": [
-                    {
-                      "type": "postback",
-                      "title": "Việt Nam",
-                      "payload": "VN"
-                    }
-                   
-                    ]
+                  
                   },
                   {
                     "title": "vnexpress.net", 
