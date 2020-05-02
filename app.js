@@ -963,7 +963,8 @@ console.log("sendJsonMessage " + keyword);
   }
 
   else  if (keyword == "tin-nhanh"){
-    let stringText = "";
+    let stringTitle = "";
+    let stringDescription = "";
     https.get(`https://wrapapi.com/use/bapp-it17/vnexpress/suckhoe/0.0.1?wrapAPIKey=j751CwjyTl5L6re4c1SiUWiKaGtWJlb7`, res => {
       let body = "";
       // read data
@@ -973,7 +974,8 @@ console.log("sendJsonMessage " + keyword);
       // print data
       res.on("end", () => {
           var profile = JSON.parse(body);
-          stringText = profile.data.output.titles[1]
+          stringTitle = profile.data.output.titles[1];
+          stringDescription = profile.data.output.descriptions[1];
           console.log(stringText);
           var messageData = {
             recipient: {
@@ -987,8 +989,8 @@ console.log("sendJsonMessage " + keyword);
                  "template_type": "generic",
                   "elements": [
                   {
-                    "title": stringText,
-                    "subtitle": "Thống kê tình hình dịch",
+                    "title": stringTitle,
+                    "subtitle": stringDescription,
                     "item_url": "fb.com/giunmoc",               
                     "image_url": "",
                     "buttons": [
