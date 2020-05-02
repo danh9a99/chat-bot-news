@@ -994,11 +994,21 @@ console.log("sendJsonMessage " + keyword);
                   "elements": [
                   {
                     "title": stringTitle,
-                    
                     "item_url": stringLink,
                     "subtitle": stringDescription,               
                     "image_url": stringImage,                   
-                  
+                    "button": [
+                      {
+                        "type": "postback",
+                        "title": "Đọc nhanh",
+                        "playload": "doc-nhanh-1"
+                      },
+                      {
+                        "type": "postback",
+                        "title": "Xem thêm",
+                        "url": stringLink
+                      }
+                    ]
                   },
                   {
                     "title": "vnexpress.net", 
@@ -1038,6 +1048,48 @@ console.log("sendJsonMessage " + keyword);
       });
   });
   }
+
+  else if(keyword == "doc-nhanh-1"){
+    https.get(`https://wrapapi.com/use/bapp-it17/vnexpress/suckhoe/0.0.1?wrapAPIKey=j751CwjyTl5L6re4c1SiUWiKaGtWJlb7`, res => {
+      let body = "";
+      // read data
+      res.on("data" ,data => {
+          body += data.toString();
+      });
+      // print data
+      res.on("end", () => {
+          var profile = JSON.parse(body);
+          stringTitle = profile.data.output.titles[0];
+          stringDescription = profile.data.output.descriptions[0];
+          stringImage = profile.data.output.images[0];
+          stringLink == profile.data.output.links[0];
+          console.log(stringImage);
+          var messageData = {
+            recipient: {
+              id: recipientId
+            },
+            message: {      
+              text: stringDescription,   
+              quick_replies: [
+                {
+                  "content_type":"text",
+                  "title":"Tin khác",
+                  "payload":"tin-khac"
+                },   
+                {
+                  "content_type":"text",
+                  "title":"Home",
+                  "payload":"home"
+                }
+              ]
+            }
+          };
+        
+          callSendAPI(messageData);
+      });
+  });
+  }
+
 }
 
 /*
