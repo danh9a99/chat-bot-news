@@ -995,19 +995,14 @@ console.log("sendJsonMessage " + keyword);
                   {
                     "title": stringTitle,                           
                     "image_url": stringImage,
-                    "text": stringDescription                   
-                    // "button": [
-                    //   {
-                    //     "type": "postback",
-                    //     "title": "Đọc nhanh",
-                    //     "playload": "doc-nhanh-1"
-                    //   },
-                    //   {
-                    //     "type": "web_url",
-                    //     "url": stringLink,
-                    //     "title": "Truy cập"
-                    //   }
-                    // ]
+                    "text": stringDescription,                
+                    "button": [                   
+                      {
+                        "type": "web_url",
+                        "url": stringLink,
+                        "title": "Truy cập"
+                      }
+                    ]
                   }          
                   ]
                 }
