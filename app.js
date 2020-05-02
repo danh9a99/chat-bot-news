@@ -996,6 +996,7 @@ console.log("sendJsonMessage " + keyword);
                     {
                       "title": stringTitle,
                       "subtitle": "",
+                      "item_url": stringLink,
                       "image_url": stringImage,                    
                       "buttons": [    
                         {
@@ -1040,7 +1041,8 @@ console.log("sendJsonMessage " + keyword);
       // print data
       res.on("end", () => {
           var profile = JSON.parse(body);         
-          stringDescription == profile.data.output.descriptions[0];
+          stringDescription == "<test>" + profile.data.output.descriptions[0];
+          console.log(stringDescription);
           var messageData = {
             recipient: {
               id: recipientId
