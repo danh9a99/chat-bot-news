@@ -990,8 +990,8 @@ console.log("sendJsonMessage " + keyword);
               "attachment": {
                 "type": "template",
                 "payload": {
-                  "template_type": "list",
-                  "top_element_style": "large",
+                  "template_type": "generic",
+                  
                   "elements": [
                     {
                       "title": "Classic T-Shirt Collection",
