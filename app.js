@@ -1002,12 +1002,8 @@ console.log("sendJsonMessage " + keyword);
                           "type": "postback",
                           "title": "Đọc nhanh",
                           "payload": "doc-nhanh-1"
-                        },
-                        {
-                          "type": "web_url",
-                          "url": "facebook.com",
-                          "title": "Truy cập"
                         }
+                       
                         ]
                     }
                     // {
