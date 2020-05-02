@@ -965,6 +965,7 @@ console.log("sendJsonMessage " + keyword);
   else  if (keyword == "tin-nhanh"){
     let stringTitle = "";
     let stringDescription = "";
+    let stringImage = "";
     https.get(`https://wrapapi.com/use/bapp-it17/vnexpress/suckhoe/0.0.1?wrapAPIKey=j751CwjyTl5L6re4c1SiUWiKaGtWJlb7`, res => {
       let body = "";
       // read data
@@ -976,7 +977,8 @@ console.log("sendJsonMessage " + keyword);
           var profile = JSON.parse(body);
           stringTitle = profile.data.output.titles[1];
           stringDescription = profile.data.output.descriptions[1];
-          console.log(stringText);
+          stringImage = profile.data.output.images[1];
+          console.log(stringImage);
           var messageData = {
             recipient: {
               id: recipientId
@@ -998,17 +1000,8 @@ console.log("sendJsonMessage " + keyword);
                       "type": "postback",
                       "title": "Việt Nam",
                       "payload": "VN"
-                    },
-                    {
-                      "type": "postback",
-                      "title": "Thế giới",
-                      "payload": "GB"
-                    },
-                    {
-                      "type": "postback",
-                      "title": "Top 10",
-                      "payload": "contact"
                     }
+                   
                     ]
                   },
                   {
