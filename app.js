@@ -961,6 +961,26 @@ console.log("sendJsonMessage " + keyword);
     };
     callSendAPI(messageData);
   }
+
+  else if(keyword == "tin-nhanh"){
+    var messageData = {
+      recipient: {
+        id: recipientId
+      },
+      message: {      
+        text: "Tôi đang tìm ánh sáng của Đảng, chờ tôi nhé!",   
+        quick_replies: [
+          {
+            "content_type":"text",
+            "title":"Home",
+            "payload":"home"
+          }
+        ]
+      }
+    };
+    callSendAPI(messageData);
+  }
+
 }
 
 /*
