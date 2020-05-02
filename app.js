@@ -962,25 +962,67 @@ console.log("sendJsonMessage " + keyword);
     callSendAPI(messageData);
   }
 
-  else if(keyword == "tin-nhanh"){
-    var messageData = {
-      recipient: {
-        id: recipientId
-      },
-      message: {      
-        text: "Tôi đang tìm ánh sáng của Đảng, chờ tôi nhé!",   
-        quick_replies: [
-          {
-            "content_type":"text",
-            "title":"Home",
-            "payload":"home"
-          }
-        ]
-      }
-    };
-    callSendAPI(messageData);
+  else  if (keyword == "tin-nhanh"){
+    let stringText = "";
+    https.get(`https://wrapapi.com/use/bapp-it17/vnexpress/suckhoe/0.0.1?wrapAPIKey=j751CwjyTl5L6re4c1SiUWiKaGtWJlb7`, res => {
+      let body = "";
+      // read data
+      res.on("data" ,data => {
+          body += data.toString();
+      });
+      // print data
+      res.on("end", () => {
+          var profile = JSON.parse(body);
+         
+          var messageData = {
+            recipient: {
+              id: recipientId
+            },
+            message: 
+            {
+              "attachment": {
+                "type": "template",
+                "payload": {
+                 "template_type": "generic",
+                  "elements": [
+                  {
+                    "title": profile.data.output.titles[1],
+                    "subtitle": profile.data.output.descriptions[1],
+                    "item_url": profile.data.output.links[1],               
+                    "image_url": profile.data.output.images[1],
+                    // "buttons": [
+                    // {
+                    //   "type": "postback",
+                    //   "title": "Việt Nam",
+                    //   "payload": "VN"
+                    // },
+                    // {
+                    //   "type": "postback",
+                    //   "title": "Thế giới",
+                    //   "payload": "GB"
+                    // },
+                    // {
+                    //   "type": "postback",
+                    //   "title": "Top 10",
+                    //   "payload": "contact"
+                    // }
+                    // ]
+                  },
+                  
+                
+                  ]
+                }
+              }
+            }
+        
+        
+        
+          };  
+        
+          callSendAPI(messageData);
+      });
+  });
   }
-
 }
 
 /*
