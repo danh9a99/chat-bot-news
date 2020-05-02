@@ -273,9 +273,6 @@ function handleReceivedMessage(event) {
         sendGenericMessage(senderID);
         break;
 
-      case 'receipt':
-        sendReceiptMessage(senderID);
-        break;
 
       case 'quick reply':
         sendQuickReply(senderID);
@@ -1387,31 +1384,19 @@ function sendGenericMessage(recipientId) {
               "payload": "contact"
             }
             ]
-          },
-          {
-            "title": "vnexpress.net", 
-            "subtitle": "Tôi sẽ tổng hợp tin tức từ trang #vnexpress",
-            "item_url": "vnexpress.net",             
-            "image_url": "https://raw.githubusercontent.com/danh9a99/chat-bot-news/master/img/express_logo.png",
-            "buttons": [
-            {
-              "type": "postback",
-              "title": "Tin nhanh",
-              "payload": "tin-nhanh"
-            }
-            ]
-          },
-          {
-            "title": "Cá nhân hóa",              
-            "image_url": "https://raw.githubusercontent.com/danh9a99/fb-robot/master/img/robot.png",
-            "buttons": [
-            {
-              "type": "postback",
-              "title": "Tùy chỉnh bot",
-              "payload": "custom"
-            }
-            ]
           }
+         
+          // {
+          //   "title": "Cá nhân hóa",              
+          //   "image_url": "https://raw.githubusercontent.com/danh9a99/fb-robot/master/img/robot.png",
+          //   "buttons": [
+          //   {
+          //     "type": "postback",
+          //     "title": "Tùy chỉnh bot",
+          //     "payload": "custom"
+          //   }
+          //   ]
+          // }
         
           ]
         }
@@ -1425,71 +1410,8 @@ function sendGenericMessage(recipientId) {
   callSendAPI(messageData);
 }
 
-/*
- * Send a receipt message using the Send API.
- *
- */
-function sendReceiptMessage(recipientId) {
-  // Generate a random receipt ID as the API requires a unique ID
-  var receiptId = "order" + Math.floor(Math.random()*1000);
 
-  var messageData = {
-    recipient: {
-      id: recipientId
-    },
-    message:{
-      attachment: {
-        type: "template",
-        payload: {
-          template_type: "receipt",
-          recipient_name: "Peter Chang",
-          order_number: receiptId,
-          currency: "USD",
-          payment_method: "Visa 1234",        
-          timestamp: "1428444852", 
-          elements: [{
-            title: "Oculus Rift",
-            subtitle: "Includes: headset, sensor, remote",
-            quantity: 1,
-            price: 599.00,
-            currency: "USD",
-            image_url: "http://messengerdemo.parseapp.com/img/riftsq.png"
-          }, {
-            title: "Samsung Gear VR",
-            subtitle: "Frost White",
-            quantity: 1,
-            price: 99.99,
-            currency: "USD",
-            image_url: "http://messengerdemo.parseapp.com/img/gearvrsq.png"
-          }],
-          address: {
-            street_1: "1 Hacker Way",
-            street_2: "",
-            city: "Menlo Park",
-            postal_code: "94025",
-            state: "CA",
-            country: "US"
-          },
-          summary: {
-            subtotal: 698.99,
-            shipping_cost: 20.00,
-            total_tax: 57.67,
-            total_cost: 626.66
-          },
-          adjustments: [{
-            name: "New Customer Discount",
-            amount: -50
-          }, {
-            name: "$100 Off Coupon",
-            amount: -100
-          }]
-        }
-      }
-    }
-  };
 
-  callSendAPI(messageData);
-}
 
 /*
  * Send a message with Quick Reply buttons.
@@ -1726,12 +1648,12 @@ function addPersistentMenu(){
       "composer_input_disabled":true,
       "call_to_actions":[
         {
-          "title":"Home",
+          "title":"COVID-19",
           "type":"postback",
           "payload":"HOME"
         },
         {
-          "title":"Joke",
+          "title":"Tin Tức",
           "type":"postback",
           "payload":"joke"
         },
