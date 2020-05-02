@@ -1003,8 +1003,8 @@ console.log("sendJsonMessage " + keyword);
                       },
                       {
                         "type": "web_url",
-                        "title": "Truy cập",
-                        "url": stringLink
+                        "url": stringLink,
+                        "title": "Truy cập"
                       }
                     ]
                   }          
