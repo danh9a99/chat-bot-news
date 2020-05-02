@@ -1214,35 +1214,40 @@ function sendTextMessage(recipientId, messageText) {
  */
 function sendJoke(recipientId) {
 
-  var jokeString = "";
-
-  while( jokeString ===  "")
-  {
-      var random = Math.floor(Math.random() * jokes.length);
-      if(jokes[random].joke.length < 320)   // better be a least one good joke :) 
-          jokeString = jokes[random].joke;
-  }
-
   var messageData = {
     recipient: {
       id: recipientId
     },
-    message: {
-      text: jokeString,
-      quick_replies: [
-        {
-          "content_type":"text",
-          "title":"Another 😂",
-          "payload":"joke"
-        },
-        {
-          "content_type":"text",
-          "title":"Home",
-          "payload":"home"
+    message: 
+    {
+      "attachment": {
+        "type": "template",
+        "payload": {
+         "template_type": "generic",
+          "elements": [
+        
+          {
+            "title": "vnexpress.net", 
+            "subtitle": "Tôi sẽ tổng hợp tin tức từ trang #vnexpress",
+            "item_url": "vnexpress.net",             
+            "image_url": "https://raw.githubusercontent.com/danh9a99/chat-bot-news/master/img/express_logo.png",
+            "buttons": [
+            {
+              "type": "postback",
+              "title": "Tin nhanh",
+              "payload": "tin-nhanh"
+            }
+            ]
+          }
+          
+          ]
         }
-      ]
+      }
     }
-  };
+
+
+
+  };  
 
   callSendAPI(messageData);
 }
