@@ -1004,37 +1004,12 @@ console.log("sendJsonMessage " + keyword);
                         "playload": "doc-nhanh-1"
                       },
                       {
-                        "type": "postback",
-                        "title": "Xem thêm",
+                        "type": "web_url",
+                        "title": "Truy cập",
                         "url": stringLink
                       }
                     ]
-                  },
-                  {
-                    "title": "vnexpress.net", 
-                    "subtitle": "Tôi sẽ tổng hợp tin tức từ trang #vnexpress",
-                    "item_url": "vnexpress.net",             
-                    "image_url": "https://raw.githubusercontent.com/danh9a99/chat-bot-news/master/img/express_logo.png",
-                    "buttons": [
-                    {
-                      "type": "postback",
-                      "title": "Tin nhanh",
-                      "payload": "tin-nhanh"
-                    }
-                    ]
-                  },
-                  {
-                    "title": "Cá nhân hóa",              
-                    "image_url": "https://raw.githubusercontent.com/danh9a99/fb-robot/master/img/robot.png",
-                    "buttons": [
-                    {
-                      "type": "postback",
-                      "title": "Tùy chỉnh bot",
-                      "payload": "custom"
-                    }
-                    ]
-                  }
-                
+                  }          
                   ]
                 }
               }
