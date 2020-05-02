@@ -990,27 +990,18 @@ console.log("sendJsonMessage " + keyword);
               "attachment": {
                 "type": "template",
                 "payload": {
-                 "template_type": "button",
+                 "template_type": "generic",
                   "elements": [
                   {
                     "title": stringTitle,                           
                     "image_url": stringImage,
                     "text": stringDescription,                
-                    "button": [                   
-                      {
-                        "type": "web_url",
-                        "url": stringLink,
-                        "title": "Truy cập"
-                      }
-                    ]
+                    
                   }          
                   ]
                 }
               }
             }
-        
-        
-        
           };  
         
           callSendAPI(messageData);
