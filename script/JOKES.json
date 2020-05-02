@@ -1,27 +1,26 @@
 {
     "attachment": {
-      "type": "template",
-      "payload": {
-       "template_type": "generic",
-        "elements": [
-      
-        {
-          "title": "vnexpress.net", 
-          "subtitle": "Tôi sẽ tổng hợp tin tức từ trang #vnexpress",
-          "item_url": "vnexpress.net",             
-          "image_url": "https://raw.githubusercontent.com/danh9a99/chat-bot-news/master/img/express_logo.png",
-          "buttons": [
+        "type": "template",
+        "payload": {
+         "template_type": "generic",
+          "elements": [
+        
           {
-            "type": "postback",
-            "title": "Tin nhanh",
-            "payload": "tin-nhanh"
+            "title": "TIN TỨC", 
+            "subtitle": "Dữ liệu lấy từ #vnexpress",           
+            "image_url": "https://raw.githubusercontent.com/danh9a99/chat-bot-news/master/img/express_logo.png",
+            "buttons": [
+            {
+              "type": "postback",
+              "title": "Tin nhanh",
+              "payload": "tin-nhanh"
+            }
+            ]
           }
+          
           ]
         }
-        
-        ]
       }
-    }
   }
 
 
