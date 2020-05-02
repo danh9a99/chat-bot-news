@@ -996,7 +996,7 @@ console.log("sendJsonMessage " + keyword);
                     {
                       "title": "Classic T-Shirt Collection",
                       "subtitle": "See all our colors",
-                      "image_url": stringImage, 
+                      "image_url": stringImage,                    
                       "buttons": [
                         {
                           "type": "postback",
@@ -1014,7 +1014,6 @@ console.log("sendJsonMessage " + keyword);
                           "payload": "contact"
                         }
                         ]
-                      },         
                     }
                     // {
                     //   "title": "Classic White T-Shirt",
