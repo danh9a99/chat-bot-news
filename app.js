@@ -990,14 +990,24 @@ console.log("sendJsonMessage " + keyword);
               "attachment": {
                 "type": "template",
                 "payload": {
-                 "template_type": "generic",
+                 "template_type": "list",
+                 "top_element_style": "compact",
                   "elements": [
                   {
                     "title": stringTitle,                           
                     "image_url": stringImage,
                     "subtitle": stringDescription,                
-                    
-                  }          
+                    "buttons": [
+                      {
+                        "title": "View",
+                        "type": "web_url",
+                        "url": stringLink,
+                        "messenger_extensions": true,
+                        "webview_height_ratio": "tall",
+                        "fallback_url": "https://peterssendreceiveapp.ngrok.io/"            
+                      }
+                    ]
+                  }                       
                   ]
                 }
               }
