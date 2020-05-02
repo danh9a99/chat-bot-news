@@ -1659,7 +1659,7 @@ function addPersistentMenu(){
         {
           "title":"Tin Tức",
           "type":"postback",
-          "payload":"joke"
+          "payload":"tin-nhanh"
         },
         // {
         //   "title":"Nested Menu Example",
