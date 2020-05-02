@@ -1007,48 +1007,20 @@ console.log("sendJsonMessage " + keyword);
                           "fallback_url": "https://peterssendreceiveapp.ngrok.io/"            
                         }
                       ]
-                    },
-                    {
-                      "title": "Classic White T-Shirt",
-                      "image_url": stringImage,
-                      "subtitle": "See all our colors",
-                      "default_action": {
-                        "type": "web_url",
-                        "url": "https://peterssendreceiveapp.ngrok.io/view?item=100",
-                        "messenger_extensions": false,
-                        "webview_height_ratio": "tall"
-                      }
-                    },
-                    {
-                      "title": "Classic Blue T-Shirt",
-                      "image_url": stringImage,
-                      "subtitle": "100% Cotton, 200% Comfortable",
-                      "default_action": {
-                        "type": "web_url",
-                        "url": "https://peterssendreceiveapp.ngrok.io/view?item=101",
-                        "messenger_extensions": true,
-                        "webview_height_ratio": "tall",
-                        "fallback_url": "https://peterssendreceiveapp.ngrok.io/"
-                      },
-                      "buttons": [
-                        {
-                          "title": "Shop Now",
-                          "type": "web_url",
-                          "url": "https://peterssendreceiveapp.ngrok.io/shop?item=101",
-                          "messenger_extensions": true,
-                          "webview_height_ratio": "tall",
-                          "fallback_url": "https://peterssendreceiveapp.ngrok.io/"            
-                        }
-                      ]        
                     }
-                  ],
-                   "buttons": [
-                    {
-                      "title": "View More",
-                      "type": "postback",
-                      "payload": "payload"            
-                    }
-                  ]  
+                    // {
+                    //   "title": "Classic White T-Shirt",
+                    //   "image_url": stringImage,
+                    //   "subtitle": "See all our colors",
+                    //   "default_action": {
+                    //     "type": "web_url",
+                    //     "url": "https://peterssendreceiveapp.ngrok.io/view?item=100",
+                    //     "messenger_extensions": false,
+                    //     "webview_height_ratio": "tall"
+                    //   }
+                    // }
+                    
+                  ]                  
                 }
               }
             }
