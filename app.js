@@ -1018,7 +1018,7 @@ console.log("sendJsonMessage " + keyword);
                       "title": profile.data.output.titles[1],
                       "subtitle": "",
                       "item_url": stringLink,
-                      "image_url": profile.data.output.images[1],                    
+                      "image_url":stringImage,                    
                       "buttons": [    
                         {
                           "type": "postback",
@@ -1037,7 +1037,7 @@ console.log("sendJsonMessage " + keyword);
                       "title": profile.data.output.titles[2],
                       "subtitle": "",
                       "item_url": stringLink,
-                      "image_url": profile.data.output.images[2],                    
+                      "image_url": stringImage,                    
                       "buttons": [    
                         {
                           "type": "postback",
