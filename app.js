@@ -997,16 +997,7 @@ console.log("sendJsonMessage " + keyword);
                       "title": "Classic T-Shirt Collection",
                       "subtitle": "See all our colors",
                       "image_url": stringImage,          
-                      "buttons": [
-                        {
-                          "title": "View",
-                          "type": "web_url",
-                          "url": "https://peterssendreceiveapp.ngrok.io/collection",
-                          "messenger_extensions": true,
-                          "webview_height_ratio": "tall",
-                          "fallback_url": "https://peterssendreceiveapp.ngrok.io/"            
-                        }
-                      ]
+                      
                     }
                     // {
                     //   "title": "Classic White T-Shirt",
