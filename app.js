@@ -1005,7 +1005,7 @@ console.log("sendJsonMessage " + keyword);
                         },
                         {
                           "type": "web_url",
-                          "url": stringLink,
+                          "url": "facebook.com",
                           "title": "Truy cập"
                         }
                         ]
