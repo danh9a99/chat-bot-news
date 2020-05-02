@@ -1172,8 +1172,8 @@ function sendGenericMessage(recipientId) {
           {
             "title": "vnexpress.net", 
             "subtitle": "Tôi sẽ tổng hợp tin tức từ trang #vnexpress",
-            "item_url": "https://moh.gov.vn/",             
-            "image_url": "https://raw.githubusercontent.com/danh9a99/fb-robot/master/img/express_logo.png",
+            "item_url": "vnexpress.net",             
+            "image_url": "https://raw.githubusercontent.com/danh9a99/chat-bot-news/master/img/express_logo.png",
             "buttons": [
             {
               "type": "postback",
