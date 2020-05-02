@@ -613,14 +613,6 @@ console.log("sendCustoMessage "+ messageText);
 
     switch (messageText.toLowerCase()) {
          
-
-      case 'image':
-        sendRandomImage(recipientId);
-        break        
-
-      case 'who':
-        sendLocale(recipientId);
-        break        
       
       case 'add keyword':
         addKeywordStep1(recipientId);
@@ -1252,36 +1244,12 @@ function sendJoke(recipientId) {
  * Send the user information back, the bot grabs this for every message
  *
  */
-function sendLocale(recipientId) {
-
-  var nameString = firstName + " " + lastName;
-
-  var messageData = {
-    recipient: {
-      id: recipientId
-    },
-    message: {
-      text: nameString,
-      quick_replies: [
-        {
-          "content_type":"text",
-          "title":"Home",
-          "payload":"home"
-        }
-      ]
-    }
-  };
-
-  callSendAPI(messageData);
-}
 
 /*
  * Simple example of an external http call with parsing.
  *
  */
-function sendRandomImage(recipientId) {
-    sendImageMessage(recipientId,"https://unsplash.it/400/600/?random");
-}
+
 
 
 function getCovidNews(){
