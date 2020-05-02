@@ -991,12 +991,12 @@ console.log("sendJsonMessage " + keyword);
                 "type": "template",
                 "payload": {
                   "template_type": "list",
-                  "top_element_style": "compact",
+                  "top_element_style": "large",
                   "elements": [
                     {
                       "title": "Classic T-Shirt Collection",
                       "subtitle": "See all our colors",
-                      "image_url": "https://peterssendreceiveapp.ngrok.io/img/collection.png",          
+                      "image_url": stringImage,          
                       "buttons": [
                         {
                           "title": "View",
@@ -1010,6 +1010,7 @@ console.log("sendJsonMessage " + keyword);
                     },
                     {
                       "title": "Classic White T-Shirt",
+                      "image_url": stringImage,
                       "subtitle": "See all our colors",
                       "default_action": {
                         "type": "web_url",
@@ -1020,7 +1021,7 @@ console.log("sendJsonMessage " + keyword);
                     },
                     {
                       "title": "Classic Blue T-Shirt",
-                      "image_url": "https://peterssendreceiveapp.ngrok.io/img/blue-t-shirt.png",
+                      "image_url": stringImage,
                       "subtitle": "100% Cotton, 200% Comfortable",
                       "default_action": {
                         "type": "web_url",
