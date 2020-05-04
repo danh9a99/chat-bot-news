@@ -1003,7 +1003,7 @@ console.log("sendJsonMessage " + keyword);
                       "title": profile.data.output.titles[1],
                       "subtitle": "",
                       "item_url": stringLink,
-                      "image_url":"https://raw.githubusercontent.com/danh9a99/chat-bot-news/master/img/express_logo.png",                    
+                      "image_url": profile.data.output.images[1],                    
                       "buttons": [    
                         {
                           "type": "postback",
@@ -1050,90 +1050,6 @@ console.log("sendJsonMessage " + keyword);
                     //     "webview_height_ratio": "tall"
                     //   }
                     // }
-                    
-                  ]                  
-                }
-              }
-            }
-          };  
-        
-          callSendAPI(messageData);
-      });
-  });
-  }
-  else if(keyword = "tin-nhanh1"){
-    let stringTitle = "";
-    let stringDescription = "";
-    let stringImage = "";
-    let stringLink = "";
-    https.get(`https://wrapapi.com/use/bapp-it17/vnexpress/suckhoe/0.0.1?wrapAPIKey=j751CwjyTl5L6re4c1SiUWiKaGtWJlb7`, res => {
-      let body = "";
-      // read data
-      res.on("data" ,data => {
-          body += data.toString();
-      });
-      // print data
-      res.on("end", () => {
-          var profile = JSON.parse(body);
-          stringTitle = profile.data.output.titles[0];
-          stringDescription = profile.data.output.descriptions[0];
-          stringImage = profile.data.output.images[0];
-          stringLink == profile.data.output.links[0];
-
-          
-          console.log(stringImage);
-          var messageData = {
-            recipient: {
-              id: recipientId
-            },
-            message: 
-            {
-              "attachment": {
-                "type": "template",
-                "payload": {
-                  "template_type": "list",
-                  "top_element_style": "large",
-                  "elements": [
-                    {
-                      "title": stringTitle,
-                      "subtitle": "",
-                      "image_url": stringImage,                    
-                      "buttons": [             
-                        {
-                          "type": "web_url",
-                          "url": profile.data.output.links[0],
-                          "title": "Truy cập",
-                          "messenger_extensions": true,
-                          "webview_height_ratio": "tall",
-                          
-                        }    
-                        ]
-                    },
-                    {
-                      "title": profile.data.output.titles[1],
-                      "subtitle": "",
-                      "item_url": profile.data.output.links[1],
-                      "image_url":"https://raw.githubusercontent.com/danh9a99/chat-bot-news/master/img/express_logo.png",                    
-
-                        "default_action": {
-                          "type": "web_url",
-                          "url": profile.data.output.links[1],
-                          "messenger_extensions":  true,
-                          "webview_height_ratio": "tall"
-                        }
-                    },
-                    {
-                      "title": profile.data.output.titles[2],
-                      "subtitle": "",
-                      "item_url": profile.data.output.links[2],
-                      "image_url": "https://raw.githubusercontent.com/danh9a99/chat-bot-news/master/img/express_logo.png",                    
-                        "default_action": {
-                          "type": "web_url",
-                          "url": profile.data.output.links[2],
-                          "messenger_extensions": true,
-                          "webview_height_ratio": "tall"
-                        }
-                    }
                     
                   ]                  
                 }
