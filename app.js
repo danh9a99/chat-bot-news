@@ -1114,28 +1114,25 @@ console.log("sendJsonMessage " + keyword);
                       "subtitle": "",
                       "item_url": stringLink,
                       "image_url":"https://raw.githubusercontent.com/danh9a99/chat-bot-news/master/img/express_logo.png",                    
-                      "buttons": [    
-                        {
+
+                        "default_action": {
                           "type": "web_url",
                           "url": profile.data.output.links[1],
-                          "title": "Truy cập"
+                          "messenger_extensions":  true,
+                          "webview_height_ratio": "tall"
                         }
-                       
-                        ]
                     },
                     {
                       "title": profile.data.output.titles[2],
                       "subtitle": "",
                       "item_url": stringLink,
                       "image_url": "https://raw.githubusercontent.com/danh9a99/chat-bot-news/master/img/express_logo.png",                    
-                      "buttons": [    
-                        {
+                        "default_action": {
                           "type": "web_url",
                           "url": profile.data.output.links[2],
-                          "title": "Truy cập"
+                          "messenger_extensions": true,
+                          "webview_height_ratio": "tall"
                         }
-                       
-                        ]
                     }
                   
                     
