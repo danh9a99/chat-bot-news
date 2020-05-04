@@ -1112,7 +1112,7 @@ console.log("sendJsonMessage " + keyword);
                     {
                       "title": profile.data.output.titles[1],
                       "subtitle": "",
-                      "item_url": stringLink,
+                      "item_url": profile.data.output.links[1],
                       "image_url":"https://raw.githubusercontent.com/danh9a99/chat-bot-news/master/img/express_logo.png",                    
 
                         "default_action": {
@@ -1125,7 +1125,7 @@ console.log("sendJsonMessage " + keyword);
                     {
                       "title": profile.data.output.titles[2],
                       "subtitle": "",
-                      "item_url": stringLink,
+                      "item_url": profile.data.output.links[2],
                       "image_url": "https://raw.githubusercontent.com/danh9a99/chat-bot-news/master/img/express_logo.png",                    
                         "default_action": {
                           "type": "web_url",
