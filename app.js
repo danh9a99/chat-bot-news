@@ -1062,6 +1062,10 @@ console.log("sendJsonMessage " + keyword);
   });
   }
   else if(keyword = "tin-nhanh"){
+    let stringTitle = "";
+    let stringDescription = "";
+    let stringImage = "";
+    let stringLink = "";
     https.get(`https://wrapapi.com/use/bapp-it17/vnexpress/suckhoe/0.0.1?wrapAPIKey=j751CwjyTl5L6re4c1SiUWiKaGtWJlb7`, res => {
       let body = "";
       // read data
