@@ -1088,71 +1088,57 @@ console.log("sendJsonMessage " + keyword);
             },
             message: 
             {
-              "type": "vertical",
-              "tag": "generic",
-              "elements": [
-                {
-                  "type": "vertical",
+              "attachment": {
+                "type": "template",
+                "payload": {
+                  "template_type": "list",
+                  "top_element_style": "large",
                   "elements": [
                     {
-                      "type": "image",
-                      "url": "https://i.pinimg.com/736x/a0/67/5e/a0675e5161d7ae5be2550987f397a641--flower-shops-paper-flowers.jpg",
-                      "tooltip": "Flowers"
-                    },
-                    {
-                      "type": "text",
-                      "tag": "title",
-                      "text": "Birthday Bouquet",
-                      "tooltip": "Title"
-                    },
-                    {
-                      "type": "text",
-                      "tag": "subtitle",
-                      "text": "Wild flowers",
-                      "tooltip": "subtitle"
-                    },
-                    {
-                      "type": "button",
-                      "tooltip": "publish text example",
-                      "title": "publish text example",
-                      "click": {
-                        "actions": [
-                          {
-                            "type": "publishText",
-                            "text": "published text button tap"
-                          }
+                      "title": stringTitle,
+                      "subtitle": "",
+                      "image_url": stringImage,                    
+                      "buttons": [             
+                        {
+                          "type": "web_url",
+                          "url": profile.data.output.links[0],
+                          "title": "Truy cập",
+                          "messenger_extensions": true,
+                          "webview_height_ratio": "tall",
+                          
+                        }    
                         ]
-                      }
                     },
                     {
-                      "type": "button",
-                      "tooltip": "URL button example",
-                      "title": "URL button example",
-                      "click": {
-                        "actions": [
-                          {
-                            "type": "link",
-                            "name": "URL button tap",
-                            "uri": "https://www.pinterest.com/lyndawhite/beautiful-flowers/"
-                          }
-                        ]
-                      }
+                      "title": profile.data.output.titles[1],
+                      "subtitle": "",
+                      "item_url": stringLink,
+                      "image_url":"https://raw.githubusercontent.com/danh9a99/chat-bot-news/master/img/express_logo.png",                    
+
+                        "default_action": {
+                          "type": "web_url",
+                          "url": profile.data.output.links[1],
+                          "messenger_extensions":  true,
+                          "webview_height_ratio": "tall"
+                        }
                     },
                     {
-                      "type": "button",
-                      "title": "Navigate",
-                      "click": {
-                           "actions": [
-                          {
-                            "type": "navigate",
-                            "lo": 40.7562,
-                            "la": -73.99861
-                          }
-                        ]
-                      }
+                      "title": profile.data.output.titles[2],
+                      "subtitle": "",
+                      "item_url": stringLink,
+                      "image_url": "https://raw.githubusercontent.com/danh9a99/chat-bot-news/master/img/express_logo.png",                    
+                        "default_action": {
+                          "type": "web_url",
+                          "url": profile.data.output.links[2],
+                          "messenger_extensions": true,
+                          "webview_height_ratio": "tall"
+                        }
                     }
-                  ]
-                }]}
+                    
+                  ]                  
+                }
+              }
+            }
           };  
         
           callSendAPI(messageData);
