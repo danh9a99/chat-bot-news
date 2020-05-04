@@ -1003,7 +1003,7 @@ console.log("sendJsonMessage " + keyword);
                       "title": profile.data.output.titles[1],
                       "subtitle": "",
                       "item_url": stringLink,
-                      "image_url": profile.data.output.images[1],                    
+                      "image_url": "https://raw.githubusercontent.com/danh9a99/chat-bot-news/master/img/express_logo.png",                    
                       "buttons": [    
                         {
                           "type": "postback",
