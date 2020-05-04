@@ -948,7 +948,7 @@ console.log("sendJsonMessage " + keyword);
     callSendAPI(messageData);
   }
 
-  else  if (keyword == "tin-nhanh1"){
+  else  if (keyword == "tin-nhanh"){
     let stringTitle = "";
     let stringDescription = "";
     let stringImage = "";
@@ -1061,7 +1061,7 @@ console.log("sendJsonMessage " + keyword);
       });
   });
   }
-  else if(keyword = "tin-nhanh"){
+  else if(keyword = "tin-nhanh1"){
     let stringTitle = "";
     let stringDescription = "";
     let stringImage = "";
