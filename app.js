@@ -1092,7 +1092,7 @@ console.log("sendJsonMessage " + keyword);
                 "type": "template",
                 "payload": {
                   "template_type": "list",
-                  "tom_element_style": "large",
+                  "tom_element_style": "compact",
                   "elements": [
                     {
                       "title": stringTitle,
@@ -1134,19 +1134,6 @@ console.log("sendJsonMessage " + keyword);
                           "webview_height_ratio": "tall"
                         }
                     }
-                  
-                    
-                    // {
-                    //   "title": "Classic White T-Shirt",
-                    //   "image_url": stringImage,
-                    //   "subtitle": "See all our colors",
-                    //   "default_action": {
-                    //     "type": "web_url",
-                    //     "url": "https://peterssendreceiveapp.ngrok.io/view?item=100",
-                    //     "messenger_extensions": false,
-                    //     "webview_height_ratio": "tall"
-                    //   }
-                    // }
                     
                   ]                  
                 }
